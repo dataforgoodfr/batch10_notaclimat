@@ -1,0 +1,23 @@
+* How to run the dashboard
+** Clone the repo
+   =git clone address_of_the_current_web_page
+** Install required Python packages
+   TBC
+** From dashboard folder do
+   =$ python index.py=
+* Architecture of the application
+  .
+  ├── app.py                  
+  ├── assets                # Folder where all the assets (CSS, pictures, etc.) are located
+  │   ├── bg.jpg
+  │   └── favicon.ico
+  ├── callbacks.py          # File where the callbacks are defined
+  ├── components            # Folder where complex the functions are stored
+  │   └── functions.py
+  ├── data                  # Folder data are stored
+  │   └── data_pc.csv
+  ├── index.py
+  ├── layouts
+     ├── header.py          #layout of the header
+     ├── tab1_layout.py     #layout of "entreprise" tab 
+     └── tab2_layout.py     #layout of "comparaison" tab
