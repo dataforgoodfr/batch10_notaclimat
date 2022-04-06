@@ -1,10 +1,11 @@
+
 * How to run the dashboard
-** Clone the repo
-   =git clone address_of_the_current_web_page=
-** Install required Python packages
-   TBC
-** From dashboard folder do
-   =$ python index.py=
+  1. Clone the repo
+    =git clone address_of_the_current_web_page=
+  2. Install required Python packages
+     TBS
+  3. From dashboard folder do
+     =$python index.py=
 * Architecture of the application
   #+begin_src sh 
   .
