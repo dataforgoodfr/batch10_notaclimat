@@ -1,13 +1,3 @@
-* Design
-** Mockup
-   The dashboard is composed of two pages, accessible via two tabs. The first tab shows information about a single company and the second compares multiple companies.
-   - Tab 1 : Vue entreprise
-     #+ATTR_HTML: :width 1200px
-     [[./Pics/tab1.png]]
-   - Tab 2 : Vue comparative
-     #+ATTR_HTML: :width 1200px
-     [[./Pics/tab2.png]]
-   
 * How to run the dashboard
   1. Clone the repo
      
@@ -28,10 +18,10 @@
   ├── callbacks.py          # File where the callbacks are defined
   ├── components            # Folder where complex the functions are stored
   │   └── functions.py
-  ├── data                  # Folder where data are stored
+  ├── data                  # Folder data are stored
   │   └── data_pc.csv
   ├── index.py
-  ├── layouts               # Folder where the HTML layouts are located
+  ├── layouts
      ├── header.py          #layout of the header
      ├── tab1_layout.py     #layout of "entreprise" tab 
      └── tab2_layout.py     #layout of "comparaison" tab
