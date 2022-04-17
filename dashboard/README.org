@@ -1,3 +1,9 @@
+* Table of Content
+  - [[#design][Design]]
+  - [[#rundashboard][How to run the dashboard]]
+  - [[#architecture][Architecture of the application]]
+  - [[#gitgithub][Git/Github workflow]]
+  - [[#currenttemplate][About the current template]]
 * Design
 ** Mockup
    The dashboard is composed of two pages, accessible via two tabs. The first tab shows information about a single company and the second compares multiple companies.
@@ -36,7 +42,7 @@
      ├── tab1_layout.py     #layout of "entreprise" tab 
      └── tab2_layout.py     #layout of "comparaison" tab
   #+end_src
-* Git Github
+* Git/Github workflow
 ** Git architecture
    - /Main/ branch contains the validated code
    - /Features/ branches are branches created by the developers to implement backlog items. E.g. branch /t1b1/ implements item t1b1
