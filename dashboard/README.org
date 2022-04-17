@@ -36,6 +36,29 @@
      ├── tab1_layout.py     #layout of "entreprise" tab 
      └── tab2_layout.py     #layout of "comparaison" tab
   #+end_src
+* Git Github
+** Git architecture
+   - /Main/ branch contains the validated code
+   - /Features/ branches are branches created by the developers to implement backlog items. E.g. branch /t1b1/ implements item t1b1
+** Git/GitHub rules
+   - Developers work on their /feature/ branches, and once an item implementation is completed, the developer does a pull request for this branch to be merged with the /main/ branch
+   - The pull request is sent to the owner of the file to be modified or to the dev team when there is no owner. Once validated the /feature/ branch is merged with the /main/ branch
+   - 1 bug correction per commit
+   - Commits have to be unambiguous
+** Ownerships:
+   |--------------+--------|
+   | file/folder  | Owner  |
+   |--------------+--------|
+   | app.py       |        |
+   | callbacks.py |        |
+   | index.py     |        |
+   | README.org   | Morgan |
+   | ./Pics       | Morgan |
+   | ./layouts    |        |
+   | ./components |        |
+   | ./assets     |        |
+   |--------------+--------|
+
 * About the current template
   - [[https://dashapptrafic.herokuapp.com/acceuil][Heroku demo]]
   - [[https://github.com/berba1995/Dashboard_avec_Dash_plotly_Python][Github repo]]
