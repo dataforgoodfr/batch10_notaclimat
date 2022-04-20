@@ -6,7 +6,7 @@ from dash.dependencies import Input, Output
 
 # Modules
 
-import callbacks
+#import callbacks
 from layouts.header import navbar
 from layouts.tab1_layout import tab1_layout
 from layouts.tab2_layout import tab2_layout
