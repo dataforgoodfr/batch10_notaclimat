@@ -10,21 +10,20 @@ LOGO = "https://i2.wp.com/ledatascientist.com/wp-content/uploads/2019/01/3193482
 
 navbar = dbc.Navbar(
     [
-	html.A(
-	    # Alignement vertical de l'image et de l'acceuil
-	    dbc.Row(
-		[   #logo
-		    dbc.Col(html.Img(src=LOGO, height="40px")),
-		    #Navlink Acceuil
-		    dbc.NavLink("Vue entreprise", href="/tab1",style={'color':'white'}),
-		    #Navlink dashbord
-		    dbc.NavLink("Vue comparative", href="/tab2",style={'color':'white'})
-		],
-		align="cesnter",
-		className="g-0",
-	    ),
-	),
-	dbc.NavbarToggler(id="navbar-toggler"),
+        html.Div(
+            # Alignement vertical de l'image et de l'acceuil
+            dbc.Row(
+                [  #logo
+                    dbc.Col(html.Img(src=LOGO, height="40px")),
+                    #Navlink Acceuil
+                    dbc.NavLink("Vue entreprise", href="/tab1", style={'color': 'white'}),
+                    #Navlink dashbord
+                    dbc.NavLink("Vue comparative", href="/tab2", style={'color': 'white'})
+                ],
+                align="center",
+                className="g-0",
+            ), ),
+        dbc.NavbarToggler(id="navbar-toggler"),
     ],
     color="dark",
     dark=True,
