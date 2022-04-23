@@ -1,30 +1,46 @@
 # Dash libraries
 
-import dash
-import dash_bootstrap_components as dbc
+from dash import dcc
 from dash import html
+import dash_bootstrap_components as dbc
+from components.utils import t1b1_df, isCurrentTab
 
-# Code to explicit
 
-LOGO = "https://i2.wp.com/ledatascientist.com/wp-content/uploads/2019/01/31934826_632207023790117_7976915477504983040_o.png?fit=1638%2C1638&ssl=1"
+def select_company_component():
+    return dcc.Dropdown(
+        id='company_select',
+        options=[{
+            'label': i,
+            'value': i
+        } for i in t1b1_df['company_name']],
+        #value='Andros'
+        multi=False,
+        searchable=True,
+        placeholder='Select a company')
 
-navbar = dbc.Navbar(
-    [
-        html.Div(
-            # Alignement vertical de l'image et de l'acceuil
-            dbc.Row(
-                [  #logo
-                    dbc.Col(html.Img(src=LOGO, height="40px")),
-                    #Navlink Acceuil
-                    dbc.NavLink("Vue entreprise", href="/tab1", style={'color': 'white'}),
-                    #Navlink dashbord
-                    dbc.NavLink("Vue comparative", href="/tab2", style={'color': 'white'})
-                ],
-                align="center",
-                className="g-0",
-            ), ),
-        dbc.NavbarToggler(id="navbar-toggler"),
-    ],
-    color="dark",
-    dark=True,
-)
+
+def getNavitemClass(currentTab, tabId):
+    return "col" + (' bg-primary' if isCurrentTab(currentTab, tabId) else ' bg-secondary')
+
+
+def navbar_component(pathname):
+    return html.Div(children=[
+        dbc.Navbar(
+            [
+                dbc.Row(select_company_component(), class_name="row w-25 m-2"),
+                dbc.Row(
+                    [
+                        #Navlink accueil
+                        dbc.NavItem(dbc.NavLink("Vue entreprise", href="/company", class_name="text-white"),
+                                    class_name=getNavitemClass(pathname, 'company')),
+                        #Navlink dashbord
+                        dbc.NavItem(dbc.NavLink("Vue comparative", href="/compare", class_name="text-white"),
+                                    class_name=getNavitemClass(pathname, 'compare')),
+                    ],
+                    class_name="row text-center w-100 g-0")
+            ],
+            class_name="d-flex flex-column align-items-baseline p-0",
+            color="dark",
+            dark=True,
+        )
+    ])
