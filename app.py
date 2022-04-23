@@ -1,16 +1,23 @@
 # Dash libraries
-from dash import dcc
-from dash import html
-from dash.dependencies import Input, Output, State
+from dash import Dash, dcc, html
+from dash.dependencies import Input, Output
+import dash_bootstrap_components as dbc
 
 # Modules
 from utils import Pages, isCurrentTab
-from app import app
 
-#import callbacks
+# Layouts
 from components.navbar import navbar_component
 from layouts.tab1_layout import tab1_layout
 from layouts.tab2_layout import tab2_layout
+
+# Style
+bootstrap_theme = [dbc.themes.BOOTSTRAP, 'https://use.fontawesome.com/releases/v5.9.0/css/all.css']
+app = Dash(__name__, external_stylesheets=bootstrap_theme)
+server = app.server
+
+# Config
+app.config.suppress_callback_exceptions = True
 
 # layout rendu par l'application
 app.layout = html.Div([dcc.Location(id='url', refresh=True), html.Div(id='navbar'), html.Div(id='page-content')])
