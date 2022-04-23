@@ -26,29 +26,30 @@
   |----------------+-------------------------+-----------+--------------------------------------|
 * How to run the dashboard
   1. Clone the repo
+     
     =$ git clone address_of_the_current_web_page=
   2. Install required Python packages
+     
      =$ pip install --user pipenv=
+     
      =$ cd dashboard && pipenv install=
   3. From dashboard folder do
+     
      =$ python index.py=
 * Architecture of the application
   #+begin_src sh 
-  .
-  ├── app.py                  
-  ├── assets                # Folder where all the assets (CSS, pictures, etc.) are located
-  │   ├── bg.jpg
-  │   └── favicon.ico
-  ├── callbacks.py          # File where the callbacks are defined
-  ├── components            # Folder where complex the functions are stored
-  │   └── functions.py
-  ├── data                  # Folder where data are stored
-  │   └── data_pc.csv
-  ├── index.py
-  ├── layouts               # Folder where the HTML layouts are located
-     ├── header.py          #layout of the header
-     ├── tab1_layout.py     #layout of "entreprise" tab 
-     └── tab2_layout.py     #layout of "comparaison" tab
+    .
+    ├── app.py                  
+    ├── assets                # Folder where all the assets (CSS, pictures, etc.) are located
+    │   └── favicon.ico       # Tab icon
+    ├── callbacks.py          # File where the callbacks are defined
+    ├── components            # Folder where complex the functions are stored
+    │   └── navbar.py
+    ├── data                  # Folder where data are stored
+    ├── index.py
+    ├── layouts               # Folder where the HTML layouts are located
+       ├── tab1_layout.py     #layout of "entreprise" tab 
+       └── tab2_layout.py     #layout of "comparaison" tab
   #+end_src
 * Git/Github workflow
 ** Git architecture
@@ -60,20 +61,20 @@
    - 1 bug correction per commit
    - Commits have to be unambiguous
 ** Ownerships:
-   |--------------+--------|
-   | file/folder  | Owner  |
-   |--------------+--------|
-   | app.py       |        |
-   | callbacks.py |        |
-   | index.py     |        |
-   | README.org   | Morgan |
-   | ./Pics       | Morgan |
-   | ./layouts    |        |
-   | ./components |        |
-   | ./assets     |        |
-   |--------------+--------|
+   |--------------+----------|
+   | file/folder  | Owner    |
+   |--------------+----------|
+   | app.py       |          |
+   | callbacks.py |          |
+   | index.py     |          |
+   | README.org   | Morgan   |
+   | ./Pics       | Morgan   |
+   | ./layouts    | Matthieu |
+   | ./components | Matthieu |
+   | ./assets     |          |
+   |--------------+----------|
 
 * About the current template
-  - [[https://dashapptrafic.herokuapp.com/accueil][Heroku demo]]
+  - [[https://dashapptrafic.herokuapp.com/acceuil][Heroku demo]]
   - [[https://github.com/berba1995/Dashboard_avec_Dash_plotly_Python][Github repo]]
   - [[https://ledatascientist.com/creer-un-tableau-de-bord-dynamique-avec-dash/][Tutorial]]
