@@ -5,10 +5,9 @@
   2. Install required Python packages
      
      =pip install -r requirements.txt=
-     =python app.py=
-  3. From dashboard folder do
+  3. Start Dash app
      
-     =$python index.py=
+     =$python dashboard/app.py=
 * Architecture of the application
   #+begin_src sh 
   .
