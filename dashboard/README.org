@@ -76,6 +76,6 @@
    |--------------+--------|
 
 * About the current template
-  - [[https://dashapptrafic.herokuapp.com/acceuil][Heroku demo]]
+  - [[https://dashapptrafic.herokuapp.com/accueil][Heroku demo]]
   - [[https://github.com/berba1995/Dashboard_avec_Dash_plotly_Python][Github repo]]
   - [[https://ledatascientist.com/creer-un-tableau-de-bord-dynamique-avec-dash/][Tutorial]]
