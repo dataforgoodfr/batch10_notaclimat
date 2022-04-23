@@ -4,8 +4,8 @@
     =git clone address_of_the_current_web_page=
   2. Install required Python packages
      
-     =pip install --user pipenv=
-     =cd dashboard && pipenv install=
+     =pip install -r requirements.txt=
+     =python app.py=
   3. From dashboard folder do
      
      =$python index.py=
