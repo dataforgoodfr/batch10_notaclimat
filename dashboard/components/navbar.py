@@ -3,7 +3,7 @@
 from dash import dcc
 from dash import html
 import dash_bootstrap_components as dbc
-from components.utils import t1b1_df, isCurrentTab, Pages
+from utils import t1b1_df, isCurrentTab, Pages
 
 
 def select_company_component(currentTab):

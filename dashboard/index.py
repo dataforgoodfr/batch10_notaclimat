@@ -4,11 +4,11 @@ from dash import html
 from dash.dependencies import Input, Output, State
 
 # Modules
-from components.utils import Pages, isCurrentTab
+from utils import Pages, isCurrentTab
 from app import app
 
 #import callbacks
-from layouts.navbar import navbar_component
+from components.navbar import navbar_component
 from layouts.tab1_layout import tab1_layout
 from layouts.tab2_layout import tab2_layout
 
