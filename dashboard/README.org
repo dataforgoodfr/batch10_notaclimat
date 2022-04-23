@@ -35,21 +35,21 @@
      =$ cd dashboard && pipenv install=
   3. From dashboard folder do
      
-     =$ python index.py=
+     =$ python app.py=
 * Architecture of the application
   #+begin_src sh 
     .
-    ├── app.py                  
+    ├── app.py                # Entry point  
     ├── assets                # Folder where all the assets (CSS, pictures, etc.) are located
     │   └── favicon.ico       # Tab icon
     ├── callbacks.py          # File where the callbacks are defined
     ├── components            # Folder where complex the functions are stored
-    │   └── navbar.py
+    │   └── navbar.py         # Navigation component
     ├── data                  # Folder where data are stored
-    ├── index.py
     ├── layouts               # Folder where the HTML layouts are located
-       ├── tab1_layout.py     #layout of "entreprise" tab 
-       └── tab2_layout.py     #layout of "comparaison" tab
+       ├── tab1_layout.py     # Layout of "entreprise" tab 
+       └── tab2_layout.py     # Layout of "comparaison" tab
+    └── utils.py              # Various functions 
   #+end_src
 * Git/Github workflow
 ** Git architecture
@@ -74,7 +74,9 @@
    | ./assets     |          |
    |--------------+----------|
 
-* About the current template
+* Heroku demo of our dashboard
+  [[https://notaclimat.herokuapp.com/][Click here]]
+* Exemple of Dash dashboard :
   - [[https://dashapptrafic.herokuapp.com/acceuil][Heroku demo]]
   - [[https://github.com/berba1995/Dashboard_avec_Dash_plotly_Python][Github repo]]
   - [[https://ledatascientist.com/creer-un-tableau-de-bord-dynamique-avec-dash/][Tutorial]]
