@@ -3,11 +3,8 @@ from dash import html
 
 
 # layout
-def tab2_layout(selected_company):
-    return html.Div([
-        html.H1('Hello Dash'),
-        html.Div([
-            html.P('Dash converts Python classes into HTML'),
-            html.P("This conversion happens behind the scenes by Dash's JavaScript front-end")
-        ])
-    ])
+def tab2_layout(selected_companies):
+    if selected_companies is None:
+        return html.Div(children=[html.Div(["Please select companies to continue"])])
+    else:
+        return html.Div(children=[html.Div(["Selected companies: " + ", ".join(selected_companies)])])

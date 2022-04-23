@@ -3,10 +3,10 @@
 from dash import dcc
 from dash import html
 import dash_bootstrap_components as dbc
-from components.utils import t1b1_df, isCurrentTab
+from components.utils import t1b1_df, isCurrentTab, Pages
 
 
-def select_company_component():
+def select_company_component(currentTab):
     return dcc.Dropdown(
         id='company_select',
         options=[{
@@ -14,7 +14,7 @@ def select_company_component():
             'value': i
         } for i in t1b1_df['company_name']],
         #value='Andros'
-        multi=False,
+        multi=isCurrentTab(currentTab, Pages.COMPARE),
         searchable=True,
         placeholder='Select a company')
 
@@ -23,19 +23,20 @@ def getNavitemClass(currentTab, tabId):
     return "col" + (' bg-primary' if isCurrentTab(currentTab, tabId) else ' bg-secondary')
 
 
-def navbar_component(pathname):
+def navbar_component(currentTab):
     return html.Div(children=[
         dbc.Navbar(
             [
-                dbc.Row(select_company_component(), class_name="row w-25 m-2"),
+                dbc.Row(select_company_component(currentTab),
+                        class_name="row m-2" + (' w-50' if isCurrentTab(currentTab, Pages.COMPANY) else ' w-50')),
                 dbc.Row(
                     [
                         #Navlink accueil
                         dbc.NavItem(dbc.NavLink("Vue entreprise", href="/company", class_name="text-white"),
-                                    class_name=getNavitemClass(pathname, 'company')),
+                                    class_name=getNavitemClass(currentTab, Pages.COMPANY)),
                         #Navlink dashbord
                         dbc.NavItem(dbc.NavLink("Vue comparative", href="/compare", class_name="text-white"),
-                                    class_name=getNavitemClass(pathname, 'compare')),
+                                    class_name=getNavitemClass(currentTab, Pages.COMPARE)),
                     ],
                     class_name="row text-center w-100 g-0")
             ],
