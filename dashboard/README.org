@@ -21,18 +21,16 @@
   | =country_flag= | t1b7                    | picture   | Flag of the company's country        |
   | =top_brands=   | t1b7                    | =list=    | List of company's main brands        |
   | =sector=       | t1b7                    | =str=     | Company's sector                     |
-  | =revenue=      | t1b7                    | =int=     | Company's revenue                    |
+  | =revenue=      | t1b7                    | =float=   | Company's revenue in billions        |
   | =revenue_year= | t1b7                    | =int=     | Year associated to company's revenue |
   |----------------+-------------------------+-----------+--------------------------------------|
 * How to run the dashboard
   1. Clone the repo
-     
     =$ git clone address_of_the_current_web_page=
   2. Install required Python packages
-     
-     TBS
+     =$ pip install --user pipenv=
+     =$ cd dashboard && pipenv install=
   3. From dashboard folder do
-     
      =$ python index.py=
 * Architecture of the application
   #+begin_src sh 
