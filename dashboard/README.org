@@ -1,9 +1,6 @@
-* Table of Content
-  - [[#design][Design]]
-  - [[#rundashboard][How to run the dashboard]]
-  - [[#architecture][Architecture of the application]]
-  - [[#gitgithub][Git/Github workflow]]
-  - [[#currenttemplate][About the current template]]
+* COMMENT save to git folder
+  C-x C-w
+  #/home/crocefisso/Git/batch10_notaclimat/dashboard/README.org
 * Design
 ** Mockup
    The dashboard is composed of two pages, accessible via two tabs. The first tab shows information about a single company and the second compares multiple companies.
@@ -14,6 +11,19 @@
      #+ATTR_HTML: :width 1200px
      [[./Pics/tab2.png]]
    
+* Variables
+  |----------------+-------------------------+-----------+--------------------------------------|
+  | Variable name  | Variable is required by | Data type | Description                          |
+  |----------------+-------------------------+-----------+--------------------------------------|
+  | =company_id=   | t1b1, t1b7              | =str=     | Id of the company                    |
+  | =company_name= | t1b1, t1b7              | =str=     | Name of the company                  |
+  | =brand_logo=   | t1b7                    | picture   | Company logo                         |
+  | =country_flag= | t1b7                    | picture   | Flag of the company's country        |
+  | =top_brands=   | t1b7                    | =list=    | List of company's main brands        |
+  | =sector=       | t1b7                    | =str=     | Company's sector                     |
+  | =revenue=      | t1b7                    | =int=     | Company's revenue                    |
+  | =revenue_year= | t1b7                    | =int=     | Year associated to company's revenue |
+  |----------------+-------------------------+-----------+--------------------------------------|
 * How to run the dashboard
   1. Clone the repo
      
