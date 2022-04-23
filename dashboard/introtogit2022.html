@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>A very short intro to Git and GitHub</title>
+<meta name="author" content="(Morgan Davidson)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/moon.css" id="theme"/>
+
+<link rel="stylesheet" href="./local.css"/>
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdn.jsdelivr.net/npm/reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">A very short intro to Git and GitHub</h1><h2 class="author">Morgan Davidson</h2><p class="date">Created: 2022-04-12 mar. 12:35</p>
+</section>
+<section>
+<section id="slide-org996075b">
+<h2 id="org996075b"><span class="section-number-2">1</span> Agenda</h2>
+<ol>
+<li>Agenda</li>
+<li>Fast facts</li>
+<li>Git &amp; GitHub</li>
+<li>Documentation</li>
+
+</ol>
+</section>
+</section>
+<section>
+<section id="slide-orga3cad31">
+<h2 id="orga3cad31"><span class="section-number-2">2</span> Fast facts</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+</section>
+<section id="slide-orgb48ce0f">
+<h3 id="orgb48ce0f"><span class="section-number-3">2.1</span> Git</h3>
+<ul>
+<li>A distributed version-control system for tracking changes in any set of files</li>
+<li>Open source</li>
+<li>Cross plateform</li>
+<li>Created by Linus Torvalds</li>
+<li>in 2005</li>
+<li>By far the most widely used source-code management tool</li>
+
+</ul>
+</section>
+<section id="slide-orgef135bc">
+<h3 id="orgef135bc"><span class="section-number-3">2.2</span> GitHub</h3>
+<ul>
+<li>Hosting for software development and version control using Git</li>
+<li>Founded in 2008</li>
+<li>subsidiary of Microsoft since 2018</li>
+<li><p>
+Mascot : Octocat
+</p>
+
+<div id="org94776be" class="figure">
+<p><img src="./Pics/octocat.jpg" alt="octocat.jpg" width="300px" />
+</p>
+</div></li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org4aa438f">
+<h2 id="org4aa438f"><span class="section-number-2">3</span> Git &amp; GitHub</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+</section>
+<section id="slide-org1d0f1fb">
+<h3 id="org1d0f1fb"><span class="section-number-3">3.1</span> Git install</h3>
+<div class="org-src-container">
+
+<pre  class="src src-sh"   ><code trim>sudo snap install git-ubuntu --classic
+</code></pre>
+</div>
+</section>
+<section id="slide-org0ef36d6">
+<h3 id="org0ef36d6"><span class="section-number-3">3.2</span> Git config</h3>
+<ul>
+<li><p>
+Add your user name:
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-sh"   ><code trim>git config --global user.name <span style="color: #C1CAFF;">"your_username"</span>
+</code></pre>
+</div></li>
+<li><p>
+and your email address:
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-sh"   ><code trim>git config --global user.email <span style="color: #C1CAFF;">"your_email_address@example.com"</span>
+</code></pre>
+</div></li>
+
+</ul>
+</section>
+<section id="slide-orgaf0fa96">
+<h3 id="orgaf0fa96"><span class="section-number-3">3.3</span> Clone a remote repo with Git</h3>
+<div class="org-src-container">
+
+<pre  class="src src-sh"   ><code trim>$ cd ../your_git_project_folder  
+$ git init
+$ git clone http://github.com/projectaddress
+</code></pre>
+</div>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Concept/Commands</th>
+<th scope="col" class="org-left">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Local repo</td>
+<td class="org-left">A Git repository (repo) on your computer</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>$ git init</code></td>
+<td class="org-left">Creates an empty Git repository on your computer (i.e. a local repo)</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>$ git clone &lt;url&gt;</code></td>
+<td class="org-left">Creates a copy of some GitHub project on your local repo through Git</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>origin</code></td>
+<td class="org-left">an alias (for an url) on your system for a particular remote repo</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="slide-org478c73c">
+<h3 id="org478c73c"><span class="section-number-3">3.4</span> Create a GitHub account</h3>
+<p>
+<a href="https://github.com/join">https://github.com/join</a>
+</p>
+</section>
+<section id="slide-org377779c">
+<h3 id="org377779c"><span class="section-number-3">3.5</span> Push a file with Git</h3>
+<ul>
+<li><p>
+Commands:
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-sh"   ><code trim>$ touch test.txt  
+$ git add test.txt
+$ git commit
+$ git push
+</code></pre>
+</div>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Command</th>
+<th scope="col" class="org-left">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><code>$ git add i</code></td>
+<td class="org-left">add changes we made to file <code>i</code> to the Git staging area.</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>$ git commit</code></td>
+<td class="org-left">Stores the content of the index in the local repo along with a log message describing the changes.</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>$ git push</code></td>
+<td class="org-left">Upload changes from local repo to remote repo</td>
+</tr>
+</tbody>
+</table></li>
+
+</ul>
+</section>
+<section id="slide-org377779c-split">
+
+<h3><span class="section-number-3">3.5</span> Push a file with Git</h3>
+<ul>
+<li><p>
+Workflow:
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-org"   ><code trim>WORKSPACE &#8213;&#8213;&#8213;&#8213;&#8213;&#8213;&#8213;&#9655;   INDEX &#8213;&#8213;&#8213;&#8213;&#8213;&#8213;&#8213;&#8213;&#8213;&#8213;&#8213;&#8213;&#8213;&#9655;   LOCAL REPO &#8213;&#8213;&#9655;   REMOTE REPO  
+$ touch test.txt &#9655;   $ git add test.txt &#9655;   $ git commit &#9655;   $ git push
+</code></pre>
+</div></li>
+<li><p>
+Workflow steps
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Concept</th>
+<th scope="col" class="org-left">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Workspace<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></td>
+<td class="org-left">Local checkout of your code.</td>
+</tr>
+
+<tr>
+<td class="org-left">Index<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup></td>
+<td class="org-left">Before you "commit" files, you need to first add them to the index.</td>
+</tr>
+
+<tr>
+<td class="org-left">Remote repo<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup></td>
+<td class="org-left">Git repo hosted on the internet (e.g. on GitHub).</td>
+</tr>
+</tbody>
+</table></li>
+
+</ul>
+</section>
+<section id="slide-org07467ba">
+<h3 id="org07467ba"><span class="section-number-3">3.6</span> Branching on Git &amp; GitHub plull requests</h3>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Concept/command</th>
+<th scope="col" class="org-left">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Master branch</td>
+<td class="org-left">Main branch</td>
+</tr>
+
+<tr>
+<td class="org-left">Branching</td>
+<td class="org-left">Allows to develop new features without affect main branch</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>$ git checkout</code></td>
+<td class="org-left">Switch to a specific branch</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>$ git branch</code></td>
+<td class="org-left">List all existing branches</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>$ git branch i</code></td>
+<td class="org-left">Creates a new branch called i</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>$ git merge i</code></td>
+<td class="org-left">merge i branch to main branch</td>
+</tr>
+</tbody>
+</table>
+
+<div id="orge2c668f" class="figure">
+<p><img src="./Pics/pullrequest.png" alt="pullrequest.png" width="1200px" />
+</p>
+</div>
+</section>
+<section id="slide-org786c7ae">
+<h3 id="org786c7ae"><span class="section-number-3">3.7</span> GitHub forking</h3>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Concept</th>
+<th scope="col" class="org-left">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Forking</td>
+<td class="org-left">Creating a copy of some GitHub project into your own GitHub namespace</td>
+</tr>
+</tbody>
+</table>
+
+<div id="org26ab1f8" class="figure">
+<p><img src="./Pics/forking.png" alt="forking.png" width="400px" />
+</p>
+<p><span class="figure-number">Figure 3: </span>Example of a collaboration architecture</p>
+</div>
+
+</section>
+<section id="slide-orgde0f600">
+<h3 id="orgde0f600"><span class="section-number-3">3.8</span> Other Git important commands</h3>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Concept</th>
+<th scope="col" class="org-left">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><code>$ git pull</code></td>
+<td class="org-left">Update local repo with the new changes in the remote repo</td>
+</tr>
+</tbody>
+</table>
+
+</section>
+</section>
+<section>
+<section id="slide-org549c3fc">
+<h2 id="org549c3fc"><span class="section-number-2">4</span> Documentation</h2>
+<ul>
+<li><a href="https://www.ndpsoftware.com/git-cheatsheet.html#loc=index;">Git Cheatsheet (interactive)</a></li>
+<li><a href="https://training.github.com/downloads/github-git-cheat-sheet.pdf">Git Cheatcheet (PDF)</a></li>
+<li><a href="https://docs.gitlab.com/ee/gitlab-basics/start-using-git.html">Start using Git on the command line (GitLab)</a></li>
+<li><a href="https://rogerdudler.github.io/git-guide/">Git - the simple guide</a></li>
+
+</ul>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+width:1800, height:1000, margin: 0.1, minScale:0.2, maxScale:2.5, transition:'cube',
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+
+});
+
+</script>
+</body>
+</html>
