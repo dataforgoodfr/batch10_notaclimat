@@ -27,15 +27,13 @@
 * How to run the dashboard
   1. Clone the repo
      
-    =$ git clone address_of_the_current_web_page=
+    =git clone git@github.com:dataforgoodfr/batch10_notaclimat.git=
   2. Install required Python packages
      
-     =$ pip install --user pipenv=
+     =pip install -r requirements.txt=
+  3. Start Dash app
      
-     =$ cd dashboard && pipenv install=
-  3. From dashboard folder do
-     
-     =$ python app.py=
+     =python dashboard/app.py=
 * Architecture of the application
   #+begin_src sh 
     .
