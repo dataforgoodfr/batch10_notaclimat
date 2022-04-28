@@ -33,7 +33,7 @@
      =pip install -r requirements.txt=
   3. Start Dash app
      
-     =python dashboard/app.py=
+     =cd dashboard && python app.py=
 * Architecture of the application
   #+begin_src sh 
     .

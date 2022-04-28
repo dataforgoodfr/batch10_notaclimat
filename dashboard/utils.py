@@ -2,6 +2,7 @@
 
 from enum import Enum
 import pandas as pd
+from urllib.parse import urlencode, urlparse, parse_qsl
 
 
 class Pages(Enum):
@@ -9,14 +10,39 @@ class Pages(Enum):
     COMPARE = 'compare'
 
 
+card_style = "h5 row card rounded p-3"
+
+component_ids = ['company_select']
+
+
 # Utils
-def isCurrentTab(currentTab, tabId):
+def isCurrentTab(currentTab, page):
     currentTab = currentTab.replace('/', "").upper()
 
-    if currentTab == '':
-        return tabId == Pages.COMPANY
-    else:
-        return Pages[currentTab] == tabId
+    try:
+        if currentTab == '':
+            return page == Pages.COMPANY
+        else:
+            return Pages[currentTab] == page
+    except KeyError:
+        return False
+
+
+def parse_url(url):
+    parse_result = urlparse(url)
+    params = parse_qsl(parse_result.query)
+    state = dict(params)
+    return state
+
+
+# Usage :
+# state_to_url(state of component_ids[0], state of component_ids[1], ...)
+def state_to_url(*state):
+    if not state or state[0] is None or len(state[0]) == 0:
+        return ''
+
+    state = urlencode(dict(zip(component_ids, state)))
+    return f'?{state}'
 
 
 t1b1_df = pd.read_csv('data/t1b1.csv')
