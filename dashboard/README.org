@@ -12,28 +12,41 @@
      [[./Pics/tab2.png]]
    
 * Variables
-  |----------------+-------------------------+-----------+--------------------------------------|
-  | Variable name  | Variable is required by | Data type | Description                          |
-  |----------------+-------------------------+-----------+--------------------------------------|
-  | =company_id=   | t1b1, t1b7              | =str=     | Id of the company                    |
-  | =company_name= | t1b1, t1b7              | =str=     | Name of the company                  |
-  | =brand_logo=   | t1b7                    | picture   | Company logo                         |
-  | =country_flag= | t1b7                    | picture   | Flag of the company's country        |
-  | =top_brands=   | t1b7                    | =list=    | List of company's main brands        |
-  | =sector=       | t1b7                    | =str=     | Company's sector                     |
-  | =revenue=      | t1b7                    | =float=   | Company's revenue in billions        |
-  | =revenue_year= | t1b7                    | =int=     | Year associated to company's revenue |
-  |----------------+-------------------------+-----------+--------------------------------------|
+  |--------------------------------+-------------------------+-----------+---------------------------------------------------------------|
+  | Variable name                  | Variable is required by | Data type | Description                                                   |
+  |--------------------------------+-------------------------+-----------+---------------------------------------------------------------|
+  | =company_id=                   | t1b1, t1b7, t1b5, t1b5  | =str=     | Id of the company                                             |
+  | =company_name=                 | t1b1, t1b7              | =str=     | Name of the company                                           |
+  | =brand_logo=                   | t1b7                    | picture   | Company logo                                                  |
+  | =country_flag=                 | t1b7                    | picture   | Flag of the company's country                                 |
+  | =top_brands=                   | t1b7                    | =list=    | List of company's main brands                                 |
+  | =sector=                       | t1b7                    | =str=     | Company's sector                                              |
+  | =revenue=                      | t1b7                    | =float=   | Company's revenue in billions                                 |
+  | =revenue_year=                 | t1b7                    | =int=     | Year associated to company's revenue                          |
+  | =total_emissions=              | t1b6                    | =float=   | Company's total emissions                                     |
+  | =total_emissions_year=         | t1b6                    | =int=     | Year associated to company's total emissions                  |
+  | =emissions_category_amount=    | t1b6                    | =float=   | Percentage of emissions associated with an emmisions category |
+  | =emissions_category_name=      | t1b6                    | =str=     | Name of the emissions category                                |
+  | =emissions_category_hover=     | t1b6                    | =str=     | Hover info to display for an emissions category               |
+  | =E1_commitments_sentence=      | t1b5                    | =str=     | Description of the commitments for scope 1 & 2                |
+  | =E2_commitments_sentence=      | t1b5                    | =str=     | Description of the commitments for score 1, 2 & 3             |
+  | =E1_ambition_long_label=       | t1b5                    | =str=     | Ambition of the commitments for scope 1 & 2                   |
+  | =E2_ambition_long_label=       | t1b5                    | =str=     | Ambition of the commitments for scope 1,2,3                   |
+  | =E1_commitments_rounded_score= | t1b5                    | =int=     | Rounded score of the commitments for scope 1 & 2              |
+  | =E2_commitments_rounded_score= | t1b5                    | =int=     | Rounded score of the commitments for scope 1, 2 & 3           |
+  |--------------------------------+-------------------------+-----------+---------------------------------------------------------------|
+
 * How to run the dashboard
   1. Clone the repo
      
-    =git clone git@github.com:dataforgoodfr/batch10_notaclimat.git=
+    =$ git clone address_of_the_current_web_page=
   2. Install required Python packages
      
-     =pip install -r requirements.txt=
-  3. Start Dash app
+     =$ pip install --user pipenv=
      
-     =cd dashboard && python app.py=
+     =$ cd dashboard && pipenv install=
+  3. Start Dash app
+     From =dashboard= folder do =$ python app.py=
 * Architecture of the application
   #+begin_src sh 
     .
@@ -45,8 +58,8 @@
     │   └── navbar.py         # Navigation component
     ├── data                  # Folder where data are stored
     ├── layouts               # Folder where the HTML layouts are located
-       ├── tab1_layout.py     # Layout of "entreprise" tab 
-       └── tab2_layout.py     # Layout of "comparaison" tab
+    │   ├── tab1_layout.py    # Layout of "entreprise" tab 
+    │   └── tab2_layout.py    # Layout of "comparaison" tab
     └── utils.py              # Various functions 
   #+end_src
 * Git/Github workflow
@@ -74,7 +87,7 @@
 
 * Heroku demo of our dashboard
   [[https://notaclimat.herokuapp.com/][Click here]]
-* Exemple of Dash dashboard :
+* Exemple of a Dash dashboard :
   - [[https://dashapptrafic.herokuapp.com/acceuil][Heroku demo]]
   - [[https://github.com/berba1995/Dashboard_avec_Dash_plotly_Python][Github repo]]
   - [[https://ledatascientist.com/creer-un-tableau-de-bord-dynamique-avec-dash/][Tutorial]]
