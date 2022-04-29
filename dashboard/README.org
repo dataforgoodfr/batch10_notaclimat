@@ -15,7 +15,7 @@
   |--------------------------------+-------------------------+-----------+---------------------------------------------------------------|
   | Variable name                  | Variable is required by | Data type | Description                                                   |
   |--------------------------------+-------------------------+-----------+---------------------------------------------------------------|
-  | =company_id=                   | t1b1, t1b7, t1b5, t1b5  | =str=     | Id of the company                                             |
+  | =company_id=                   | t1b1, t1b7, t1b5, t1b6  | =str=     | Id of the company                                             |
   | =company_name=                 | t1b1, t1b7              | =str=     | Name of the company                                           |
   | =brand_logo=                   | t1b7                    | picture   | Company logo                                                  |
   | =country_flag=                 | t1b7                    | picture   | Flag of the company's country                                 |
