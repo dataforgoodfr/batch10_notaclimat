@@ -29,6 +29,7 @@ Flask-Compress = "==1.11"
 Jinja2 = "==3.1.1"
 MarkupSafe = "==2.1.1"
 Werkzeug = "==2.1.1"
+openpyxl = "*"
 
 [dev-packages]
 
