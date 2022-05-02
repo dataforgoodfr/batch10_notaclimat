@@ -104,3 +104,7 @@ companies
 #df = companies({'top_brands':brands})
 #df
 #brands
+
+# Export dataframe to csv
+
+companies.to_csv(path_or_buf='t1b1-7.csv', sep=',', header=True, index=False)
