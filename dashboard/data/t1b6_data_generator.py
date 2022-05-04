@@ -3,7 +3,7 @@ import numpy as np
 
 # Read file
 df_bdd_surcouche = pd.read_csv(
-    '\\BDD Surcouche modif.csv', 
+    'BDD Surcouche modif.csv', 
     header=0,
     sep=';'
 )
