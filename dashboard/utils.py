@@ -10,7 +10,7 @@ class Pages(Enum):
     COMPARE = 'compare'
 
 
-card_style = "h5 row card rounded p-3"
+card_style = "row card rounded p-3"
 
 component_ids = ['company_select']
 
