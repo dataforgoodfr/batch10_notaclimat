@@ -1,20 +1,9 @@
 import pandas as pd
 import numpy as np
-import os
-# import dash
-import dash_html_components as html
-import dash_core_components as dcc
-import plotly.graph_objects as go
-import plotly.express as px
-
-
-# Path
-path = os.path.dirname(__file__)
-
 
 # Read file
 df_bdd_surcouche = pd.read_csv(
-    path + '\\Data\\BDD Surcouche modif.csv', 
+    'BDD Surcouche modif.csv', 
     header=0,
     sep=';'
 )
