@@ -47,3 +47,4 @@ def state_to_url(*state):
 
 t1b1_df = pd.read_csv('data/t1b1.csv')
 t1b3_df = pd.read_csv('data/t1b3.csv')
+t1b6_df = pd.read_csv('data/t1b6.csv')
