@@ -1,5 +1,10 @@
 import pandas as pd
 import numpy as np
+import dash_html_components as html
+import dash_core_components as dcc
+import plotly.graph_objects as go
+import plotly.express as px
+
 
 # Read file
 df_bdd_surcouche = pd.read_csv(
@@ -9,70 +14,41 @@ df_bdd_surcouche = pd.read_csv(
 )
 
 
-# Keep useful columns for the block
-df_emissions_details = df_bdd_surcouche.loc[:,
-    [col for col in df_bdd_surcouche.columns if 
-        ('Group' in col)|
-        ('total_emissions' in col)|
-        ('name' in col)|
-        ('amount' in col)|
-        ('hover' in col)
-    ]
-]
-
-
 # Transform DataFrame
-df_emissions_details_amount = df_emissions_details.melt(
-    id_vars=['Group', 'total_emissions'],
-    value_vars=[col for col in df_bdd_surcouche.columns if 
-        ('amount' in col)
-    ],
-    var_name='Category_number',
-    value_name='Amount'
-)
-df_emissions_details_amount['Category_number'] = df_emissions_details_amount[
-    'Category_number'].str.split('_', expand=True)[1]
-
-df_emissions_details_cat_name = df_emissions_details.melt(
-    id_vars=['Group'],
-    value_vars=[col for col in df_bdd_surcouche.columns if 
-        ('name' in col)
-    ],
-    var_name='Category_number',
-    value_name='Category'
-)
-df_emissions_details_cat_name['Category_number'] = df_emissions_details_cat_name[
-    'Category_number'].str.split('_', expand=True)[1]
-
-df_emissions_details_hover = df_emissions_details.melt(
-    id_vars=['Group'],
-    value_vars=[col for col in df_bdd_surcouche.columns if 
-        ('hover' in col)
-    ],
-    var_name='Category_number',
-    value_name='Hover'
-)
-df_emissions_details_hover['Category_number'] = df_emissions_details_hover['Category_number'].str.split(
-    '_', expand=True)[1]
-
-df_emissions_details = df_emissions_details_amount.merge(
-    df_emissions_details_cat_name, how='outer').merge(
-        df_emissions_details_hover, how='outer'
-    )
+df_t1b6 = df_bdd_surcouche.copy()
 
 
-# Convert Amount from percentage to absolute value
-df_emissions_details['Amount'] = df_emissions_details['Amount'].str[:-1].astype(int) / 100
-df_emissions_details['Amount'] = df_emissions_details['Amount']*df_emissions_details['total_emissions']
-df_emissions_details['Amount'] = df_emissions_details['Amount'].astype(int)
+## Rename Group to company_name
+df_t1b6 = df_t1b6.rename({'Group':'company_name'}, axis=1)
 
 
-# Sort by Group name and category
-df_emissions_details = df_emissions_details.sort_values(['Group', 'Category_number'], ignore_index=True)
+## Change amount type (from percentage to float - for example 0.1)
+df_t1b6.loc[:, [col for col in df_t1b6.columns if 'amount' in col]] = df_t1b6.loc[:, [col for col in df_t1b6.columns if 'amount' in col]].apply(lambda x: x.str[:-1].astype(int)/100).astype(float)
+
+## Concatenate amount, name and hover values in a single column
+cols = ['emissions_category1_amount', 'emissions_category2_amount', 'emissions_category3_amount', 'emissions_category4_amount', 'emissions_category5_amount', 'emissions_category6_amount']
+df_t1b6['emissions_category_amount'] = df_t1b6[cols].apply(lambda row: ','.join(row.values.astype(str)), axis=1)
+
+cols = ['emissions_category1_name', 'emissions_category2_name', 'emissions_category3_name', 'emissions_category4_name', 'emissions_category5_name', 'emissions_category6_name']
+df_t1b6['emissions_category_name'] = df_t1b6[cols].apply(lambda row: ','.join(row.values.astype(str)), axis=1)
+
+cols = ['emissions_category1_hover', 'emissions_category2_hover', 'emissions_category3_hover', 'emissions_category4_hover', 'emissions_category5_hover', 'emissions_category6_hover']
+df_t1b6['emissions_category_hover'] = df_t1b6[cols].apply(lambda row: ','.join(row.values.astype(str)), axis=1)
+
+
+## Keep useful columns
+df_t1b6 = df_t1b6[
+    ['company_name',
+    'total_emissions', 
+    'total_emissions_year',
+    'emissions_category_name',
+    'emissions_category_amount',
+    'emissions_category_hover']
+    ]
 
 
 # Write output file
-df_emissions_details.to_csv(
+df_t1b6.to_csv(
     path_or_buf='t1b6.csv', 
     sep=';', 
     header=True, 
