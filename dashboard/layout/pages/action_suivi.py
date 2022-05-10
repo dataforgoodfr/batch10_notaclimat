@@ -36,7 +36,7 @@ def action_suivi(selected_company):
                                     html.Td('Réduction actuelle', className="fw-bold"),
                                     html.Td('Réduction de ses propres émissions', className="fw-bold"),
                                     html.Td('Réduction de son empreinte carbone', className="fw-bold"),
-                                    html.Td(company_global_information['comment'], rowSpan=2)
+                                    html.Td('Commentaire Nota Climat', className="fw-bold")
                                 ]),
                                 # ]),
                                 html.Tr([
@@ -45,6 +45,7 @@ def action_suivi(selected_company):
                                             className="px-2"),
                                     html.Td('\u279c ' + company_global_information['complete_score_short_label'],
                                             className="px-2"),
+                                    html.Td(company_global_information['comment'], rowSpan=2)
                                 ],
                                         className="")
                             ])
