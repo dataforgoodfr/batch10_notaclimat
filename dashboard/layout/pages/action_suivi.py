@@ -45,9 +45,9 @@ def action_suivi(selected_company):
                                             className="px-2"),
                                     html.Td('\u279c ' + company_global_information['complete_score_short_label'],
                                             className="px-2"),
-                                    html.Td(company_global_information['comment'], rowSpan=2)
+                                    html.Td(company_global_information['comment'])
                                 ],
-                                        className="")
+                                        className="align-baseline")
                             ])
                         ],
                         className="align-middle table table-borderless text-center mb-0")
