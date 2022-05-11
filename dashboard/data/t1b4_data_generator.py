@@ -14,7 +14,7 @@ list_reference = ['Unrevealed', 'TotallyInsufficient', 'Sufficient', 'Partial', 
 
 # For C1 and C2 direct scores references
 list_reference2 = ['Non publiée', 'Vers + 4°C', 'Entre +2°C et +3°C', '2°C', 'Bien moins de 2°C', '1,5°C', 'n.a. (trop récente)']
-list_hexcolors_direct = ['820000', 'C00000', 'FF8939', 'FEC800', '8CDF41', '0DB800', 'C00000']
+list_hexcolors_direct = ['#820000', '#C00000', '#FF8939', '#FEC800', '#8CDF41', '#0DB800', '#C00000']
 list_scores = ['1','2','3','4','5','6','99']
 
 
