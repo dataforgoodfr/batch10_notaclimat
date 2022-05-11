@@ -56,7 +56,7 @@ direct_score_reference_table = pd.DataFrame(
 
 
 # Generating filtered df once company is selected
-df_filtered = t1b4_data[['company_name','Global score','C1 direct score','C2 complete score']]
+df_filtered = t1b4_data[['company_name','Sector', 'Global score','C1 direct score','C2 complete score']]
 
 df_filtered= df_filtered.astype(
   {'Global score': int,
@@ -69,8 +69,6 @@ df_filtered= df_filtered.astype(
    'C2 complete score': str
   }
 )    
-
-print(df_filtered.dtypes)
     
 # Filtering data & adding reference columns
 
