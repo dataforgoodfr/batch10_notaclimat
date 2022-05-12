@@ -14,10 +14,10 @@ def get_sector(df, selected_company):
     return sector
 
 def get_filtered_data(df, selected_company):
-    df_filtered = df[df['Sector'] == get_sector(df, selected_company)]
+    df_filtered = df[df['Sector'] == get_sector(df, selected_company)].reset_index(drop=True)
     return df_filtered
 
-def generate_html_table(df, max_rows):
+def generate_html_table(df, max_rows, selected_company):
     rows = []
     for i in range(0, max_rows):
         image_filename = df.iloc[i]['global_score_pic']
@@ -30,7 +30,7 @@ def generate_html_table(df, max_rows):
             ))
     return html.Div(
         children=[
-        html.Div("Comparaison Sectorielle", className="h5"),
+        html.Div("Comparaison sectorielle - " + selected_company, className="h5"),
         html.Div([
             html.Table([
                 html.Tbody([
@@ -42,10 +42,10 @@ def generate_html_table(df, max_rows):
                     ])
                 ]),
                 html.Tbody(rows)
-            ])
+            ],className="align-middle table table-borderless text-center mb-0")
         ])
-    ])
+    ],className='card_style')
 
 def sector_compare(selected_company):
     sector_compare_information = get_filtered_data(df_t1b4, selected_company)[printable_columns]
-    return generate_html_table(sector_compare_information, len(sector_compare_information))
+    return generate_html_table(sector_compare_information, len(sector_compare_information), selected_company)
