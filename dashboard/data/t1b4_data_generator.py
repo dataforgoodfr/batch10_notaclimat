@@ -10,7 +10,7 @@ def encode(text):
 
 # variables
 # For global score references
-list_reference = ['Unrevealed', 'TotallyInsufficient', 'Sufficient', 'Partial', 'Strong', 'VeryStrong']
+list_reference = ['Unrevealed', 'TotallyInsufficient', 'Insufficient', 'Partial', 'Strong', 'VeryStrong']
 
 # For C1 and C2 direct scores references
 list_reference2 = ['Non publiée', 'Vers + 4°C', 'Entre +2°C et +3°C', '2°C', 'Bien moins de 2°C', '1,5°C', 'n.a. (trop récente)']
