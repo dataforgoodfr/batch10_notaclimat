@@ -10,11 +10,12 @@ class Pages(Enum):
     COMPARE = 'compare'
 
 
-card_style = "h5 row card rounded p-3"
+card_style = "row card rounded p-3"
 
 component_ids = ['company_select']
 
 # Utils
+
 
 def isCurrentTab(currentTab, page):
     currentTab = currentTab.replace('/', "").upper()
@@ -34,8 +35,10 @@ def parse_url(url):
     state = dict(params)
     return state
 
-# Usage 
+
+# Usage
 #   # state_to_url(state of component_ids[0], state of component_ids[1], ...)
+
 
 def state_to_url(*state):
     if not state or state[0] is None or len(state[0]) == 0:
@@ -43,6 +46,7 @@ def state_to_url(*state):
 
     state = urlencode(dict(zip(component_ids, state)))
     return f'?{state}'
+
 
 t1b1_df = pd.read_csv('data/t1b1.csv')
 t1b6_df = pd.read_csv('data/t1b6.csv')
