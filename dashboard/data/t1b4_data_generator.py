@@ -114,6 +114,21 @@ df_filtered = pd.merge(
 df_filtered['global_score_pic'] = 'assets/frames/climate_score/Frame_'+ df_filtered['global_score_label']+'.png' 
 
 
+# Updating column names to match variables list
+df_filtered = df_filtered.rename(
+  columns={
+    'Sector': 'sector',
+    'Global score': 'global_score',
+    'C1 direct score': 'direct_score',
+    'c1_label': 'direct_score_short_label',
+    'c1_color': 'direct_score_hexa_color_code',
+    'C2 complete score': 'complete_score',
+    'c2_label': 'complete_score_short_label',
+    'c2_color': 'complete_score_hexa_color_code',
+    'global_score_label': 'global_score_short_label',
+    'global_score_pic': 'global_score_logo_path'
+  })
+
 # Exporting
 df_filtered.to_csv(
   path_or_buf='t1b4.csv',

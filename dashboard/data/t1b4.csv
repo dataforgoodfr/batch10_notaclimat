@@ -1,4 +1,4 @@
-company_name,Sector,Global score,C1 direct score,C2 complete score,c1_label,c1_color,c2_label,c2_color,global_score_label,global_score_pic
+company_name,sector,global_score,direct_score,complete_score,direct_score_short_label,direct_score_hexa_color_code,complete_score_short_label,complete_score_hexa_color_code,global_score_short_label,global_score_logo_path
 Associated British Foods (alim.),Food,3,5,1,Bien moins de 2°C,#8CDF41,Non publiée,#820000,Insufficient,assets/frames/climate_score/Frame_Insufficient.png
 Bel,Food,4,3,5,Entre +2°C et +3°C,#FF8939,Bien moins de 2°C,#8CDF41,Partial,assets/frames/climate_score/Frame_Partial.png
 Danone,Food,6,6,5,"1,5°C",#0DB800,Bien moins de 2°C,#8CDF41,VeryStrong,assets/frames/climate_score/Frame_VeryStrong.png
