@@ -1,7 +1,7 @@
 # Extract company table
 
 import pandas as pd
-df = pd.read_excel('/home/crocefisso/Git/batch10_notaclimat/dashboard/data/notaclimat.xlsx')#, dtype={'Groupe': str})
+df = pd.read_excel('notaclimat.xlsx')#, dtype={'Groupe': str})
 df = df.drop([0])
 companies = df.iloc[:, 0:1].rename(columns={'Groupe':'company_name'})#.astype(str)
 companies
@@ -65,11 +65,11 @@ id = companies['company_id'].tolist()
 id
 for i in id:
     j = generator.generate(str(i), 240, 240, output_format="png")
-    f = open("./Pics/" + str(i) + ".png", "wb")
+    f = open("../assets/Pics/" + str(i) + ".png", "wb")
     f.write(j)
     f.close()
 
-companies['brand_logo'] = './Pics/'+companies['company_id']+'.png'    
+companies['brand_logo'] = 'assets/Pics/'+companies['company_id']+'.png'    
 
 #identicon = generator.generate("Andros", 240, 240, output_format="png")
 #f = open("./Pics/identicon.png", "wb")
