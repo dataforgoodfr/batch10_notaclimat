@@ -48,3 +48,4 @@ def generate_html_table(df, max_rows, selected_company):
 
 def sector_compare(selected_company):
     sector_compare_information = get_filtered_data(df_t1b4, selected_company)[printable_columns]
+    return generate_html_table(sector_compare_information, len(sector_compare_information), selected_company)
