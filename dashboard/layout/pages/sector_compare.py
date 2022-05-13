@@ -1,9 +1,10 @@
 from dash import html
-from utils import t1b4_df
+from utils import t1b4_df, card_style
 
 df_t1b4 = t1b4_df
 
 printable_columns = ['company_name', 'global_score_pic', 'c1_label', 'c2_label', 'c1_color', 'c2_color']
+
 
 def get_sector(df, selected_company):
     '''
@@ -13,38 +14,46 @@ def get_sector(df, selected_company):
     sector = df.loc[index, 'Sector']
     return sector
 
+
 def get_filtered_data(df, selected_company):
     df_filtered = df[df['Sector'] == get_sector(df, selected_company)].reset_index(drop=True)
     return df_filtered
+
 
 def generate_html_table(df, max_rows, selected_company):
     rows = []
     for i in range(0, max_rows):
         image_filename = df.iloc[i]['global_score_pic']
-        rows.append(html.Tr([
-            html.Td(df.iloc[i]['company_name'], className="fw-bold"),
-            html.Td(html.Img(src=image_filename), className="me-1"),
-            html.Td('\u279c ' + df.iloc[i]['c1_label'],className="px-2",style={'color': df['c1_color'][i]}),
-            html.Td('\u279c ' + df.iloc[i]['c2_label'],className="px-2",style={'color': df['c2_color'][i]})
-            ], id=str(i),className="align-baseline"
-            ))
-    return html.Div(
-        children=[
-        html.Div("Comparaison sectorielle - " + selected_company, className="h5"),
+        rows.append(
+            html.Tr([
+                html.Td(df.iloc[i]['company_name'], className="fw-bold text-start"),
+                html.Td(html.Img(src=image_filename), className="me-1 p-1 text-start"),
+                html.Td('\u279c ' + df.iloc[i]['c1_label'], className="px-2", style={'color': df['c1_color'][i]}),
+                html.Td('\u279c ' + df.iloc[i]['c2_label'], className="px-2", style={'color': df['c2_color'][i]})
+            ],
+                    id=str(i),
+                    className=""))
+    return html.Div(children=[
+        html.Div("Comparaison sectorielle - " + selected_company, className="h4 mb-3"),
         html.Div([
             html.Table([
-                html.Tbody([
+                html.Thead([
                     html.Tr([
-                        html.Td('Entreprises', className="fw-bold"),
-                        html.Td('Réduction actuelle', className="fw-bold"),
-                        html.Td('Réduction de ses propres émissions', className="fw-bold"),
-                        html.Td('Réduction de son empreinte carbone', className="fw-bold")
-                    ])
-                ]),
+                        html.Td('Entreprises', className="fw-bold py-3 sticky-top align-middle"),
+                        html.Td('Réduction actuelle', className="fw-bold py-3 sticky-top align-middle"),
+                        html.Td('Réduction de ses propres émissions', className="fw-bold py-3 sticky-top align-middle"),
+                        html.Td('Réduction de son empreinte carbone', className="fw-bold py-3 sticky-top align-middle")
+                    ],
+                            className="table-primary p-2 sticky-top")
+                ], className="sticky-top"),
                 html.Tbody(rows)
-            ],className="align-middle table table-borderless text-center mb-0")
-        ])
-    ],className='card_style')
+            ],
+                       className="align-middle table table-borderless table-bordered text-center mb-0")
+        ],
+                 className="flex-shrink-1 overflow-auto")
+    ],
+                    className=card_style + " flex-nowrap h-100 overflow-auto p-3")
+
 
 def sector_compare(selected_company):
     sector_compare_information = get_filtered_data(df_t1b4, selected_company)[printable_columns]

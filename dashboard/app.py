@@ -24,7 +24,7 @@ app.layout = html.Div([
     dcc.Location(id='url', refresh=False),
     html.Div(id='navbar-select'),
     html.Div(id='navbar-tabs'),
-    html.Div(id='page-content', className="d-flex flex-grow-1")
+    html.Div(id='page-content', className="overflow-hidden")
 ],
                       className="d-flex flex-column vh-100")
 
@@ -32,7 +32,7 @@ app.layout = html.Div([
 @app.callback(Output('page-content', 'children'), Input('url', 'pathname'))
 def display_page(pathname):
     if isCurrentTab(pathname, Pages.COMPANY):
-        return html.Div(id='tab-1', className="d-flex flex-grow-1")
+        return html.Div(id='tab-1', className="h-100")
     elif isCurrentTab(pathname, Pages.COMPARE):
         return html.Div(id='tab-2')
     else:
