@@ -9,8 +9,11 @@ def get_company_global_information(df_companies_global_information, selected_com
     company_global_information = {}
     company_global_information['company_name'] = df_company['company_name'][0]
     company_global_information['global_score_short_label'] = df_company['global_score_short_label'][0]
+    company_global_information['global_score_hexa_color_code'] = df_company['global_score_hexa_color_code'][0]
     company_global_information['direct_score_short_label'] = df_company['direct_score_short_label'][0]
+    company_global_information['direct_score_hexa_color_code'] = df_company['direct_score_hexa_color_code'][0]
     company_global_information['complete_score_short_label'] = df_company['complete_score_short_label'][0]
+    company_global_information['complete_score_hexa_color_code'] = df_company['complete_score_hexa_color_code'][0]
     company_global_information['global_score_logo_path'] = df_company['global_score_logo_path'][0]
     company_global_information['comment'] = df_company['comment'][0]
 
@@ -40,14 +43,17 @@ def action_suivi(selected_company):
                                 ]),
                                 # ]),
                                 html.Tr([
-                                    html.Td(company_global_information['global_score_short_label'], className="px-2"),
+                                    html.Td(company_global_information['global_score_short_label'], className="px-2", 
+                                        style={'color': company_global_information['global_score_hexa_color_code']}),
                                     html.Td('\u279c ' + company_global_information['direct_score_short_label'],
-                                            className="px-2"),
+                                            className="px-2", 
+                                            style={'color': company_global_information['direct_score_hexa_color_code']}),
                                     html.Td('\u279c ' + company_global_information['complete_score_short_label'],
-                                            className="px-2"),
-                                    html.Td(company_global_information['comment'], rowSpan=2)
+                                            className="px-2",
+                                            style={'color': company_global_information['complete_score_hexa_color_code']}),
+                                    html.Td(company_global_information['comment'])
                                 ],
-                                        className="")
+                                        className="align-baseline")
                             ])
                         ],
                         className="align-middle table table-borderless text-center mb-0")

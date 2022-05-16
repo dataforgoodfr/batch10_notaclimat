@@ -1,12 +1,12 @@
 import pandas as pd
 
 def generate_logo_path_variable(df_company_scores):
-	df_company_scores.loc[df_company_scores['global_score'] == 1, 'global_score_logo_path'] = "../Pics/1_not_released_reduction.png"
-	df_company_scores.loc[df_company_scores['global_score'] == 2, 'global_score_logo_path'] = "../Pics/2_totally_unsatisfactory_reduction.png"
-	df_company_scores.loc[df_company_scores['global_score'] == 3, 'global_score_logo_path'] = "../Pics/3_unsatisfactory_reduction.png"
-	df_company_scores.loc[df_company_scores['global_score'] == 4, 'global_score_logo_path'] = "../Pics/4_partial_reduction.png"
-	df_company_scores.loc[df_company_scores['global_score'] == 5, 'global_score_logo_path'] = "../Pics/5_strong_reduction.png"
-	df_company_scores.loc[df_company_scores['global_score'] == 6, 'global_score_logo_path'] = "../Pics/6_very_strong_reduction.png"
+	df_company_scores.loc[df_company_scores['global_score'] == 1, 'global_score_logo_path'] = "../assets/Pics/1_not_released_reduction.png"
+	df_company_scores.loc[df_company_scores['global_score'] == 2, 'global_score_logo_path'] = "../assets/Pics/2_totally_unsatisfactory_reduction.png"
+	df_company_scores.loc[df_company_scores['global_score'] == 3, 'global_score_logo_path'] = "../assets/Pics/3_unsatisfactory_reduction.png"
+	df_company_scores.loc[df_company_scores['global_score'] == 4, 'global_score_logo_path'] = "../assets/Pics/4_partial_reduction.png"
+	df_company_scores.loc[df_company_scores['global_score'] == 5, 'global_score_logo_path'] = "../assets/Pics/5_strong_reduction.png"
+	df_company_scores.loc[df_company_scores['global_score'] == 6, 'global_score_logo_path'] = "../assets/Pics/6_very_strong_reduction.png"
 	return df_company_scores
 
 print('Loading data...', end="")
