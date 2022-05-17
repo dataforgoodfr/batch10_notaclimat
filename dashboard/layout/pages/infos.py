@@ -10,7 +10,6 @@ import ast
 
 def infos(selected_company):
     top_brands = ast.literal_eval(t1b7_df[t1b7_df['company_name'] == selected_company]['top_brands'].values[0])
-    print([("e" + i) for i in top_brands])
 
     return html.Div(
         children=[
