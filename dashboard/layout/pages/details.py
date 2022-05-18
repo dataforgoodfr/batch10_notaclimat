@@ -32,11 +32,11 @@ def details(selected_company):
                     "type": "pie"
                     }],
                     "layout": {
-                        "title" : dict(text ="Détail des émissions",
+                        "title" : dict(text =("Détail des émissions - " + selected_company),
                         font = dict(
                             size=20,
-                            color = 'white')),
-                            "paper_bgcolor":"#111111",
+                            color = 'black')),
+                            "paper_bgcolor":"#ffffff",
                             "width": "2000",
                             "annotations": [
                                 {
