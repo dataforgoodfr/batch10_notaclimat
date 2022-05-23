@@ -47,10 +47,5 @@ def generate_html_table(df, max_rows, selected_company):
     ],className='card_style')
 
 def sector_compare(selected_company):
-<<<<<<< HEAD
-    return html.Div(children=[html.Div("Comparaison sectorielle - " + selected_company, className="h5")],
-                    className=card_style)
-=======
     sector_compare_information = get_filtered_data(df_t1b4, selected_company)[printable_columns]
     return generate_html_table(sector_compare_information, len(sector_compare_information), selected_company)
->>>>>>> t1b4
