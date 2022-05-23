@@ -135,7 +135,19 @@ df_filtered = df_filtered.rename(
     'c1_color': 'direct_score_hexa_color_code',
     'C2 complete score': 'complete_score',
     'c2_label': 'complete_score_short_label',
-    'c2_color': 'complete_score_hexa_color_code'
+    'c2_color': 'complete_score_hexa_color_code',
+    'C1 final value':'c1_final_value', 
+    'C1 2deg final':'c1_2_deg_final', 
+    'C1 1,8deg final':'c1_1_8_deg_final',
+    'C1 1,5deg final':'c1_1_5_deg_final',
+    'C2 final value':'c2_final_value', 
+    'C2 2deg final':'c2_2_deg_final', 
+    'C2 1,8deg final':'c2_1_8_deg_final',
+    'C2 1,5deg final':'c2_1_5_deg_final',
+    'C1 initial date': 'c1_initial_date',
+    'C1 final date': 'c1_final_date',
+    'C2 initial date': 'c2_initial_date',
+    'C2 final date': 'c2_final_date',
   })
 
 # Exporting

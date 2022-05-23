@@ -92,10 +92,10 @@ def generate_topright_item(selected_company):
 def bottom_left(selected_company):
     df = get_filtered_data(t1b2_df, selected_company)
     values = []
-    col_list = ['C1 final value', 
-    'C1 2deg final', 
-    'C1 1,8deg final',
-    'C1 1,5deg final'
+    col_list = ['c1_final_value', 
+    'c1_2_deg_final', 
+    'c1_1_8_deg_final',
+    'c1_1_5_deg_final'
     ]
     
     for col in col_list:
@@ -125,10 +125,10 @@ def generate_bottomleft_item(selected_company):
 def bottom_right(selected_company):
     df = get_filtered_data(t1b2_df, selected_company)
     values = []
-    col_list = ['C2 final value', 
-    'C2 2deg final', 
-    'C2 1,8deg final',
-    'C2 1,5deg final'
+    col_list = ['c2_final_value', 
+    'c2_2_deg_final', 
+    'c2_1_8_deg_final',
+    'c2_1_5_deg_final'
     ]
     
     for col in col_list:
@@ -162,10 +162,16 @@ def action_suivi(selected_company):
             html.Div("Action actuelle - Suivi des engagements", className="h5"),
             html.Div(
                 children=[
-                    generate_topleft_item(selected_company),
-                    generate_topright_item(selected_company),
-                    generate_bottomleft_item(selected_company),
-                    generate_bottomright_item(selected_company)
+                    html.Div(
+                        children=[
+                        generate_topleft_item(selected_company),
+                        generate_topright_item(selected_company)
+                    ]),
+                    html.Div(
+                        children=[
+                        generate_bottomleft_item(selected_company),
+                        generate_bottomright_item(selected_company)
+                    ])
                 ]
             )
         ]
