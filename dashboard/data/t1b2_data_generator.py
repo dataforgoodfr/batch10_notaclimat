@@ -72,17 +72,25 @@ direct_score_reference_table = pd.DataFrame(
    
 # Filtering data & adding reference columns
 
-df_filtered = t1b2_data[cols_for_calculation].copy()
+df_filtered = t1b2_data[cols_for_calculation].fillna(0).copy()
 
-df_filtered= df_filtered.astype(
-  {'C1 direct score': int, 
-   'C2 complete score': int
-  }
-).astype(
-  {'C1 direct score': str, 
-   'C2 complete score': str
-  }
-)    
+df_filtered = df_filtered.replace(to_replace={'n.a.':0})
+
+df_filtered= df_filtered.astype({
+  'C1 direct score': int, 
+  'C2 complete score': int,
+  'C2 final value': float, 
+  'C2 2deg final': float, 
+  'C2 1,8deg final': float,
+  'C2 1,5deg final': float,
+  'C1 final value': float, 
+  'C1 2deg final': float, 
+  'C1 1,8deg final': float,
+  'C1 1,5deg final': float
+}).astype({
+  'C1 direct score': str, 
+  'C2 complete score': str
+})    
 
 
 # C1 direct score references
@@ -113,7 +121,7 @@ df_filtered = pd.merge(
 )
 
 
-# Adding the global score image
+# Adding the C1 & C2 score image
 # TODO
 # df_filtered['global_score_pic'] = 'assets/frames/climate_score/Frame_'+ df_filtered['global_score_label']+'.png' 
 
