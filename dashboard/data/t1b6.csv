@@ -1,151 +1,26 @@
-Group;total_emissions;Category_number;Amount;Category;Hover
-Andros;2327352;category1;232735;Sc. 1 & 2 - Own emissions;Hover text cat 1
-Andros;2327352;category2;930940;Sc.3 - Suppliers;Hover text cat2
-Andros;2327352;category3;349102;Sc.3 - Logistics;Hover text cat 3
-Andros;2327352;category4;232735;Sc.3 - Packaging;Hover text cat 4
-Andros;2327352;category5;581838;Sc.3 - Use of product;Hover text cat 5
-Andros;2327352;category6;116367;Others;Hover text cat 6
-Associated British Foods (alim.);2327352;category1;232735;Sc. 1 & 2 - Own emissions;Hover text cat 1
-Associated British Foods (alim.);2327352;category2;930940;Sc.3 - Suppliers;Hover text cat2
-Associated British Foods (alim.);2327352;category3;349102;Sc.3 - Logistics;Hover text cat 3
-Associated British Foods (alim.);2327352;category4;232735;Sc.3 - Packaging;Hover text cat 4
-Associated British Foods (alim.);2327352;category5;581838;Sc.3 - Use of product;Hover text cat 5
-Associated British Foods (alim.);2327352;category6;116367;Others;Hover text cat 6
-Beiersdorf;2327352;category1;232735;Sc. 1 & 2 - Own emissions;Hover text cat 1
-Beiersdorf;2327352;category2;930940;Sc.3 - Suppliers;Hover text cat2
-Beiersdorf;2327352;category3;349102;Sc.3 - Logistics;Hover text cat 3
-Beiersdorf;2327352;category4;232735;Sc.3 - Packaging;Hover text cat 4
-Beiersdorf;2327352;category5;581838;Sc.3 - Use of product;Hover text cat 5
-Beiersdorf;2327352;category6;116367;Others;Hover text cat 6
-Bel;2327352;category1;232735;Sc. 1 & 2 - Own emissions;Hover text cat 1
-Bel;2327352;category2;930940;Sc.3 - Suppliers;Hover text cat2
-Bel;2327352;category3;349102;Sc.3 - Logistics;Hover text cat 3
-Bel;2327352;category4;232735;Sc.3 - Packaging;Hover text cat 4
-Bel;2327352;category5;581838;Sc.3 - Use of product;Hover text cat 5
-Bel;2327352;category6;116367;Others;Hover text cat 6
-Colgate-Palmolive;2327352;category1;232735;Sc. 1 & 2 - Own emissions;Hover text cat 1
-Colgate-Palmolive;2327352;category2;930940;Sc.3 - Suppliers;Hover text cat2
-Colgate-Palmolive;2327352;category3;349102;Sc.3 - Logistics;Hover text cat 3
-Colgate-Palmolive;2327352;category4;232735;Sc.3 - Packaging;Hover text cat 4
-Colgate-Palmolive;2327352;category5;581838;Sc.3 - Use of product;Hover text cat 5
-Colgate-Palmolive;2327352;category6;116367;Others;Hover text cat 6
-Coty;2327352;category1;232735;Sc. 1 & 2 - Own emissions;Hover text cat 1
-Coty;2327352;category2;930940;Sc.3 - Suppliers;Hover text cat2
-Coty;2327352;category3;349102;Sc.3 - Logistics;Hover text cat 3
-Coty;2327352;category4;232735;Sc.3 - Packaging;Hover text cat 4
-Coty;2327352;category5;581838;Sc.3 - Use of product;Hover text cat 5
-Coty;2327352;category6;116367;Others;Hover text cat 6
-Danone;2327352;category1;232735;Sc. 1 & 2 - Own emissions;Hover text cat 1
-Danone;2327352;category2;930940;Sc.3 - Suppliers;Hover text cat2
-Danone;2327352;category3;349102;Sc.3 - Logistics;Hover text cat 3
-Danone;2327352;category4;232735;Sc.3 - Packaging;Hover text cat 4
-Danone;2327352;category5;581838;Sc.3 - Use of product;Hover text cat 5
-Danone;2327352;category6;116367;Others;Hover text cat 6
-Ecotone;2327352;category1;232735;Sc. 1 & 2 - Own emissions;Hover text cat 1
-Ecotone;2327352;category2;930940;Sc.3 - Suppliers;Hover text cat2
-Ecotone;2327352;category3;349102;Sc.3 - Logistics;Hover text cat 3
-Ecotone;2327352;category4;232735;Sc.3 - Packaging;Hover text cat 4
-Ecotone;2327352;category5;581838;Sc.3 - Use of product;Hover text cat 5
-Ecotone;2327352;category6;116367;Others;Hover text cat 6
-Ferrero;2327352;category1;232735;Sc. 1 & 2 - Own emissions;Hover text cat 1
-Ferrero;2327352;category2;930940;Sc.3 - Suppliers;Hover text cat2
-Ferrero;2327352;category3;349102;Sc.3 - Logistics;Hover text cat 3
-Ferrero;2327352;category4;232735;Sc.3 - Packaging;Hover text cat 4
-Ferrero;2327352;category5;581838;Sc.3 - Use of product;Hover text cat 5
-Ferrero;2327352;category6;116367;Others;Hover text cat 6
-GSK;2327352;category1;232735;Sc. 1 & 2 - Own emissions;Hover text cat 1
-GSK;2327352;category2;930940;Sc.3 - Suppliers;Hover text cat2
-GSK;2327352;category3;349102;Sc.3 - Logistics;Hover text cat 3
-GSK;2327352;category4;232735;Sc.3 - Packaging;Hover text cat 4
-GSK;2327352;category5;581838;Sc.3 - Use of product;Hover text cat 5
-GSK;2327352;category6;116367;Others;Hover text cat 6
-General Mills;2327352;category1;232735;Sc. 1 & 2 - Own emissions;Hover text cat 1
-General Mills;2327352;category2;930940;Sc.3 - Suppliers;Hover text cat2
-General Mills;2327352;category3;349102;Sc.3 - Logistics;Hover text cat 3
-General Mills;2327352;category4;232735;Sc.3 - Packaging;Hover text cat 4
-General Mills;2327352;category5;581838;Sc.3 - Use of product;Hover text cat 5
-General Mills;2327352;category6;116367;Others;Hover text cat 6
-Henkel;2327352;category1;232735;Sc. 1 & 2 - Own emissions;Hover text cat 1
-Henkel;2327352;category2;930940;Sc.3 - Suppliers;Hover text cat2
-Henkel;2327352;category3;349102;Sc.3 - Logistics;Hover text cat 3
-Henkel;2327352;category4;232735;Sc.3 - Packaging;Hover text cat 4
-Henkel;2327352;category5;581838;Sc.3 - Use of product;Hover text cat 5
-Henkel;2327352;category6;116367;Others;Hover text cat 6
-Hero;2327352;category1;232735;Sc. 1 & 2 - Own emissions;Hover text cat 1
-Hero;2327352;category2;930940;Sc.3 - Suppliers;Hover text cat2
-Hero;2327352;category3;349102;Sc.3 - Logistics;Hover text cat 3
-Hero;2327352;category4;232735;Sc.3 - Packaging;Hover text cat 4
-Hero;2327352;category5;581838;Sc.3 - Use of product;Hover text cat 5
-Hero;2327352;category6;116367;Others;Hover text cat 6
-Johnson & Johnson;2327352;category1;232735;Sc. 1 & 2 - Own emissions;Hover text cat 1
-Johnson & Johnson;2327352;category2;930940;Sc.3 - Suppliers;Hover text cat2
-Johnson & Johnson;2327352;category3;349102;Sc.3 - Logistics;Hover text cat 3
-Johnson & Johnson;2327352;category4;232735;Sc.3 - Packaging;Hover text cat 4
-Johnson & Johnson;2327352;category5;581838;Sc.3 - Use of product;Hover text cat 5
-Johnson & Johnson;2327352;category6;116367;Others;Hover text cat 6
-Kellogg;2327352;category1;232735;Sc. 1 & 2 - Own emissions;Hover text cat 1
-Kellogg;2327352;category2;930940;Sc.3 - Suppliers;Hover text cat2
-Kellogg;2327352;category3;349102;Sc.3 - Logistics;Hover text cat 3
-Kellogg;2327352;category4;232735;Sc.3 - Packaging;Hover text cat 4
-Kellogg;2327352;category5;581838;Sc.3 - Use of product;Hover text cat 5
-Kellogg;2327352;category6;116367;Others;Hover text cat 6
-L'Oréal;2327352;category1;232735;Sc. 1 & 2 - Own emissions;Hover text cat 1
-L'Oréal;2327352;category2;930940;Sc.3 - Suppliers;Hover text cat2
-L'Oréal;2327352;category3;349102;Sc.3 - Logistics;Hover text cat 3
-L'Oréal;2327352;category4;232735;Sc.3 - Packaging;Hover text cat 4
-L'Oréal;2327352;category5;581838;Sc.3 - Use of product;Hover text cat 5
-L'Oréal;2327352;category6;116367;Others;Hover text cat 6
-Mars;2327352;category1;232735;Sc. 1 & 2 - Own emissions;Hover text cat 1
-Mars;2327352;category2;930940;Sc.3 - Suppliers;Hover text cat2
-Mars;2327352;category3;349102;Sc.3 - Logistics;Hover text cat 3
-Mars;2327352;category4;232735;Sc.3 - Packaging;Hover text cat 4
-Mars;2327352;category5;581838;Sc.3 - Use of product;Hover text cat 5
-Mars;2327352;category6;116367;Others;Hover text cat 6
-Mondelez;2327352;category1;232735;Sc. 1 & 2 - Own emissions;Hover text cat 1
-Mondelez;2327352;category2;930940;Sc.3 - Suppliers;Hover text cat2
-Mondelez;2327352;category3;349102;Sc.3 - Logistics;Hover text cat 3
-Mondelez;2327352;category4;232735;Sc.3 - Packaging;Hover text cat 4
-Mondelez;2327352;category5;581838;Sc.3 - Use of product;Hover text cat 5
-Mondelez;2327352;category6;116367;Others;Hover text cat 6
-Nestlé;2327352;category1;232735;Sc. 1 & 2 - Own emissions;Hover text cat 1
-Nestlé;2327352;category2;930940;Sc.3 - Suppliers;Hover text cat2
-Nestlé;2327352;category3;349102;Sc.3 - Logistics;Hover text cat 3
-Nestlé;2327352;category4;232735;Sc.3 - Packaging;Hover text cat 4
-Nestlé;2327352;category5;581838;Sc.3 - Use of product;Hover text cat 5
-Nestlé;2327352;category6;116367;Others;Hover text cat 6
-P&G;2327352;category1;232735;Sc. 1 & 2 - Own emissions;Hover text cat 1
-P&G;2327352;category2;930940;Sc.3 - Suppliers;Hover text cat2
-P&G;2327352;category3;349102;Sc.3 - Logistics;Hover text cat 3
-P&G;2327352;category4;232735;Sc.3 - Packaging;Hover text cat 4
-P&G;2327352;category5;581838;Sc.3 - Use of product;Hover text cat 5
-P&G;2327352;category6;116367;Others;Hover text cat 6
-Pepsico;2327352;category1;232735;Sc. 1 & 2 - Own emissions;Hover text cat 1
-Pepsico;2327352;category2;930940;Sc.3 - Suppliers;Hover text cat2
-Pepsico;2327352;category3;349102;Sc.3 - Logistics;Hover text cat 3
-Pepsico;2327352;category4;232735;Sc.3 - Packaging;Hover text cat 4
-Pepsico;2327352;category5;581838;Sc.3 - Use of product;Hover text cat 5
-Pepsico;2327352;category6;116367;Others;Hover text cat 6
-Reckitt;2327352;category1;232735;Sc. 1 & 2 - Own emissions;Hover text cat 1
-Reckitt;2327352;category2;930940;Sc.3 - Suppliers;Hover text cat2
-Reckitt;2327352;category3;349102;Sc.3 - Logistics;Hover text cat 3
-Reckitt;2327352;category4;232735;Sc.3 - Packaging;Hover text cat 4
-Reckitt;2327352;category5;581838;Sc.3 - Use of product;Hover text cat 5
-Reckitt;2327352;category6;116367;Others;Hover text cat 6
-S. C. Johnson;2327352;category1;232735;Sc. 1 & 2 - Own emissions;Hover text cat 1
-S. C. Johnson;2327352;category2;930940;Sc.3 - Suppliers;Hover text cat2
-S. C. Johnson;2327352;category3;349102;Sc.3 - Logistics;Hover text cat 3
-S. C. Johnson;2327352;category4;232735;Sc.3 - Packaging;Hover text cat 4
-S. C. Johnson;2327352;category5;581838;Sc.3 - Use of product;Hover text cat 5
-S. C. Johnson;2327352;category6;116367;Others;Hover text cat 6
-Shiseido;2327352;category1;232735;Sc. 1 & 2 - Own emissions;Hover text cat 1
-Shiseido;2327352;category2;930940;Sc.3 - Suppliers;Hover text cat2
-Shiseido;2327352;category3;349102;Sc.3 - Logistics;Hover text cat 3
-Shiseido;2327352;category4;232735;Sc.3 - Packaging;Hover text cat 4
-Shiseido;2327352;category5;581838;Sc.3 - Use of product;Hover text cat 5
-Shiseido;2327352;category6;116367;Others;Hover text cat 6
-Unilever;2327352;category1;232735;Sc. 1 & 2 - Own emissions;Hover text cat 1
-Unilever;2327352;category2;930940;Sc.3 - Suppliers;Hover text cat2
-Unilever;2327352;category3;349102;Sc.3 - Logistics;Hover text cat 3
-Unilever;2327352;category4;232735;Sc.3 - Packaging;Hover text cat 4
-Unilever;2327352;category5;581838;Sc.3 - Use of product;Hover text cat 5
-Unilever;2327352;category6;116367;Others;Hover text cat 6
+company_name;total_emissions;total_emissions_year;emissions_category_name;emissions_category_amount;emissions_category_hover
+Andros;2327352;2019;Sc. 1 & 2 - Own emissions,Sc.3 - Suppliers,Sc.3 - Logistics,Sc.3 - Packaging,Sc.3 - Use of product,Others;0.05,0.4,0.15,0.1,0.25,0.05;Hover text cat 1,Hover text cat2,Hover text cat 3,Hover text cat 4,Hover text cat 5,Hover text cat 6
+Associated British Foods (alim.);2327352;2019;Sc. 1 & 2 - Own emissions,Sc.3 - Suppliers,Sc.3 - Logistics,Sc.3 - Packaging,Sc.3 - Use of product,Others;0.05,0.4,0.15,0.1,0.25,0.05;Hover text cat 1,Hover text cat2,Hover text cat 3,Hover text cat 4,Hover text cat 5,Hover text cat 6
+Bel;2327352;2019;Sc. 1 & 2 - Own emissions,Sc.3 - Suppliers,Sc.3 - Logistics,Sc.3 - Packaging,Sc.3 - Use of product,Others;0.05,0.4,0.15,0.1,0.25,0.05;Hover text cat 1,Hover text cat2,Hover text cat 3,Hover text cat 4,Hover text cat 5,Hover text cat 6
+Danone;2327352;2019;Sc. 1 & 2 - Own emissions,Sc.3 - Suppliers,Sc.3 - Logistics,Sc.3 - Packaging,Sc.3 - Use of product,Others;0.05,0.4,0.15,0.1,0.25,0.05;Hover text cat 1,Hover text cat2,Hover text cat 3,Hover text cat 4,Hover text cat 5,Hover text cat 6
+Ecotone;2327352;2019;Sc. 1 & 2 - Own emissions,Sc.3 - Suppliers,Sc.3 - Logistics,Sc.3 - Packaging,Sc.3 - Use of product,Others;0.05,0.4,0.15,0.1,0.25,0.05;Hover text cat 1,Hover text cat2,Hover text cat 3,Hover text cat 4,Hover text cat 5,Hover text cat 6
+Ferrero;2327352;2019;Sc. 1 & 2 - Own emissions,Sc.3 - Suppliers,Sc.3 - Logistics,Sc.3 - Packaging,Sc.3 - Use of product,Others;0.05,0.4,0.15,0.1,0.25,0.05;Hover text cat 1,Hover text cat2,Hover text cat 3,Hover text cat 4,Hover text cat 5,Hover text cat 6
+General Mills;2327352;2019;Sc. 1 & 2 - Own emissions,Sc.3 - Suppliers,Sc.3 - Logistics,Sc.3 - Packaging,Sc.3 - Use of product,Others;0.05,0.4,0.15,0.1,0.25,0.05;Hover text cat 1,Hover text cat2,Hover text cat 3,Hover text cat 4,Hover text cat 5,Hover text cat 6
+Hero;2327352;2019;Sc. 1 & 2 - Own emissions,Sc.3 - Suppliers,Sc.3 - Logistics,Sc.3 - Packaging,Sc.3 - Use of product,Others;0.05,0.4,0.15,0.1,0.25,0.05;Hover text cat 1,Hover text cat2,Hover text cat 3,Hover text cat 4,Hover text cat 5,Hover text cat 6
+Kellogg;2327352;2019;Sc. 1 & 2 - Own emissions,Sc.3 - Suppliers,Sc.3 - Logistics,Sc.3 - Packaging,Sc.3 - Use of product,Others;0.05,0.4,0.15,0.1,0.25,0.05;Hover text cat 1,Hover text cat2,Hover text cat 3,Hover text cat 4,Hover text cat 5,Hover text cat 6
+Mars;2327352;2019;Sc. 1 & 2 - Own emissions,Sc.3 - Suppliers,Sc.3 - Logistics,Sc.3 - Packaging,Sc.3 - Use of product,Others;0.05,0.4,0.15,0.1,0.25,0.05;Hover text cat 1,Hover text cat2,Hover text cat 3,Hover text cat 4,Hover text cat 5,Hover text cat 6
+Mondelez;2327352;2019;Sc. 1 & 2 - Own emissions,Sc.3 - Suppliers,Sc.3 - Logistics,Sc.3 - Packaging,Sc.3 - Use of product,Others;0.05,0.4,0.15,0.1,0.25,0.05;Hover text cat 1,Hover text cat2,Hover text cat 3,Hover text cat 4,Hover text cat 5,Hover text cat 6
+Nestlé;2327352;2019;Sc. 1 & 2 - Own emissions,Sc.3 - Suppliers,Sc.3 - Logistics,Sc.3 - Packaging,Sc.3 - Use of product,Others;0.05,0.4,0.15,0.1,0.25,0.05;Hover text cat 1,Hover text cat2,Hover text cat 3,Hover text cat 4,Hover text cat 5,Hover text cat 6
+Pepsico;2327352;2019;Sc. 1 & 2 - Own emissions,Sc.3 - Suppliers,Sc.3 - Logistics,Sc.3 - Packaging,Sc.3 - Use of product,Others;0.05,0.4,0.15,0.1,0.25,0.05;Hover text cat 1,Hover text cat2,Hover text cat 3,Hover text cat 4,Hover text cat 5,Hover text cat 6
+Henkel;2327352;2019;Sc. 1 & 2 - Own emissions,Sc.3 - Suppliers,Sc.3 - Logistics,Sc.3 - Packaging,Sc.3 - Use of product,Others;0.05,0.4,0.15,0.1,0.25,0.05;Hover text cat 1,Hover text cat2,Hover text cat 3,Hover text cat 4,Hover text cat 5,Hover text cat 6
+P&G;2327352;2019;Sc. 1 & 2 - Own emissions,Sc.3 - Suppliers,Sc.3 - Logistics,Sc.3 - Packaging,Sc.3 - Use of product,Others;0.05,0.4,0.15,0.1,0.25,0.05;Hover text cat 1,Hover text cat2,Hover text cat 3,Hover text cat 4,Hover text cat 5,Hover text cat 6
+Unilever;2327352;2019;Sc. 1 & 2 - Own emissions,Sc.3 - Suppliers,Sc.3 - Logistics,Sc.3 - Packaging,Sc.3 - Use of product,Others;0.05,0.4,0.15,0.1,0.25,0.05;Hover text cat 1,Hover text cat2,Hover text cat 3,Hover text cat 4,Hover text cat 5,Hover text cat 6
+Colgate-Palmolive;2327352;2019;Sc. 1 & 2 - Own emissions,Sc.3 - Suppliers,Sc.3 - Logistics,Sc.3 - Packaging,Sc.3 - Use of product,Others;0.05,0.4,0.15,0.1,0.25,0.05;Hover text cat 1,Hover text cat2,Hover text cat 3,Hover text cat 4,Hover text cat 5,Hover text cat 6
+Coty;2327352;2019;Sc. 1 & 2 - Own emissions,Sc.3 - Suppliers,Sc.3 - Logistics,Sc.3 - Packaging,Sc.3 - Use of product,Others;0.05,0.4,0.15,0.1,0.25,0.05;Hover text cat 1,Hover text cat2,Hover text cat 3,Hover text cat 4,Hover text cat 5,Hover text cat 6
+L'Oréal;2327352;2019;Sc. 1 & 2 - Own emissions,Sc.3 - Suppliers,Sc.3 - Logistics,Sc.3 - Packaging,Sc.3 - Use of product,Others;0.05,0.4,0.15,0.1,0.25,0.05;Hover text cat 1,Hover text cat2,Hover text cat 3,Hover text cat 4,Hover text cat 5,Hover text cat 6
+Shiseido;2327352;2019;Sc. 1 & 2 - Own emissions,Sc.3 - Suppliers,Sc.3 - Logistics,Sc.3 - Packaging,Sc.3 - Use of product,Others;0.05,0.4,0.15,0.1,0.25,0.05;Hover text cat 1,Hover text cat2,Hover text cat 3,Hover text cat 4,Hover text cat 5,Hover text cat 6
+Beiersdorf;2327352;2019;Sc. 1 & 2 - Own emissions,Sc.3 - Suppliers,Sc.3 - Logistics,Sc.3 - Packaging,Sc.3 - Use of product,Others;0.05,0.4,0.15,0.1,0.25,0.05;Hover text cat 1,Hover text cat2,Hover text cat 3,Hover text cat 4,Hover text cat 5,Hover text cat 6
+S. C. Johnson;2327352;2019;Sc. 1 & 2 - Own emissions,Sc.3 - Suppliers,Sc.3 - Logistics,Sc.3 - Packaging,Sc.3 - Use of product,Others;0.05,0.4,0.15,0.1,0.25,0.05;Hover text cat 1,Hover text cat2,Hover text cat 3,Hover text cat 4,Hover text cat 5,Hover text cat 6
+Reckitt;2327352;2019;Sc. 1 & 2 - Own emissions,Sc.3 - Suppliers,Sc.3 - Logistics,Sc.3 - Packaging,Sc.3 - Use of product,Others;0.05,0.4,0.15,0.1,0.25,0.05;Hover text cat 1,Hover text cat2,Hover text cat 3,Hover text cat 4,Hover text cat 5,Hover text cat 6
+GSK;2327352;2019;Sc. 1 & 2 - Own emissions,Sc.3 - Suppliers,Sc.3 - Logistics,Sc.3 - Packaging,Sc.3 - Use of product,Others;0.05,0.4,0.15,0.1,0.25,0.05;Hover text cat 1,Hover text cat2,Hover text cat 3,Hover text cat 4,Hover text cat 5,Hover text cat 6
+Johnson & Johnson;2327352;2019;Sc. 1 & 2 - Own emissions,Sc.3 - Suppliers,Sc.3 - Logistics,Sc.3 - Packaging,Sc.3 - Use of product,Others;0.05,0.4,0.15,0.1,0.25,0.05;Hover text cat 1,Hover text cat2,Hover text cat 3,Hover text cat 4,Hover text cat 5,Hover text cat 6
