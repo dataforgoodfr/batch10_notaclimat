@@ -1,4 +1,3 @@
-=======
 # Libraries imports
 
 from enum import Enum
