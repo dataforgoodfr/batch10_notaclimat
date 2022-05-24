@@ -1,3 +1,4 @@
+=======
 # Dash libraries
 from dash import Dash, dcc, html
 from dash.dependencies import Input, Output
@@ -24,14 +25,15 @@ app.layout = html.Div([
     dcc.Location(id='url', refresh=False),
     html.Div(id='navbar-select'),
     html.Div(id='navbar-tabs'),
-    html.Div(id='page-content')
-])
+    html.Div(id='page-content', className="overflow-hidden")
+],
+                      className="d-flex flex-column vh-100")
 
 
 @app.callback(Output('page-content', 'children'), Input('url', 'pathname'))
 def display_page(pathname):
     if isCurrentTab(pathname, Pages.COMPANY):
-        return html.Div(id='tab-1')
+        return html.Div(id='tab-1', className="h-100")
     elif isCurrentTab(pathname, Pages.COMPARE):
         return html.Div(id='tab-2')
     else:

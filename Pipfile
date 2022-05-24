@@ -1,0 +1,43 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+click = "==8.1.2"
+colorama = "==0.4.4"
+dash = "==2.3.1"
+dash-bootstrap-components = "==1.1.0"
+dash-core-components = "==2.0.0"
+dash-html-components = "==2.0.0"
+dash-table = "==5.0.0"
+gunicorn = "==20.1.0"
+importlib-metadata = "==4.11.3"
+itsdangerous = "==2.1.2"
+numpy = "==1.22.3"
+pandas = "==1.4.2"
+plotly = "==5.7.0"
+python-dateutil = "==2.8.2"
+pytz = "==2022.1"
+six = "==1.16.0"
+tenacity = "==8.0.1"
+yapf = "==0.32.0"
+zipp = "==3.8.0"
+Brotli = "==1.0.9"
+Flask = "==2.1.1"
+Flask-Compress = "==1.11"
+Jinja2 = "==3.1.1"
+MarkupSafe = "==2.1.1"
+Werkzeug = "==2.1.1"
+openpyxl = "*"
+dash-daq = "==0.5.0"
+emoji-country-flag = "==1.3.0"
+pandoc-fignos = "==2.4.0"
+pandoc-xnos = "==2.5.0"
+pandocfilters = "==1.5.0"
+psutil = "==5.9.0"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"

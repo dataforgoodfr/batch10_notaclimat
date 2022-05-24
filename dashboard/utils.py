@@ -1,4 +1,5 @@
-# Libraries
+=======
+# Libraries imports
 
 from enum import Enum
 import pandas as pd
@@ -10,12 +11,13 @@ class Pages(Enum):
     COMPARE = 'compare'
 
 
-card_style = "h5 row card rounded p-3"
+card_style = "row card rounded p-3"
 
 component_ids = ['company_select']
 
-
 # Utils
+
+
 def isCurrentTab(currentTab, page):
     currentTab = currentTab.replace('/', "").upper()
 
@@ -35,8 +37,10 @@ def parse_url(url):
     return state
 
 
-# Usage :
-# state_to_url(state of component_ids[0], state of component_ids[1], ...)
+# Usage
+#   # state_to_url(state of component_ids[0], state of component_ids[1], ...)
+
+
 def state_to_url(*state):
     if not state or state[0] is None or len(state[0]) == 0:
         return ''
