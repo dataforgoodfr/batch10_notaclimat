@@ -3,7 +3,8 @@ from dash import html
 from layout.pages.engagements import engagements
 from layout.pages.infos import infos
 from layout.pages.details import details
-from layout.pages.action_suivi import action_suivi
+from layout.pages.action_suivi_global import action_suivi
+from layout.pages.action_suivi_actuel import action_suivi_actuel
 from layout.pages.sector_compare import sector_compare
 
 
@@ -21,7 +22,8 @@ def tab1_layout(selected_company):
             details(selected_company),
         ],
                  className="col-3 d-flex flex-column gap-2"),
-        html.Div(children=[action_suivi(selected_company),
+        html.Div(children=[action_suivi_actuel(selected_company),
+                           action_suivi(selected_company),
                            sector_compare(selected_company)],
                  className="col d-flex flex-column gap-2")
     ],
