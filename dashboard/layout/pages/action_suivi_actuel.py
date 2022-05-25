@@ -24,7 +24,7 @@ def top_left(selected_company):
     df = get_filtered_data(t1b2_df, selected_company)
     value = get_data(df, 'direct_score_short_label')
     color = get_data(df, 'direct_score_hexa_color_code')
-    pic = 'assets/Picto_usine.png'
+    pic = 'assets/frames/Picto_usine.png'
     return value, color, pic
 
 def generate_topleft_item(selected_company):
