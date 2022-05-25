@@ -21,7 +21,7 @@ def get_company_global_information(df_companies_global_information, selected_com
     return company_global_information
 
 
-def action_suivi(selected_company):
+def action_suivi_global(selected_company):
     company_global_information = get_company_global_information(t1b3_df, selected_company)
     return html.Div(
         children=[

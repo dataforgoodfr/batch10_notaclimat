@@ -174,7 +174,7 @@ def action_suivi_actuel(selected_company):
                     ])
                 ]
             )
-        ],
-        className=card_style)
+        ]
+    )
     
     
