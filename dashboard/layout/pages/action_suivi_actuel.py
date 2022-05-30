@@ -1,12 +1,24 @@
 from dash import html, dcc
+
 import dash_bootstrap_components as dbc
-from utils import card_style
 import dash_daq as daq
+
+from utils import card_style
 from utils import t1b2_df
+
 import plotly.graph_objects as go
+import plotly.figure_factory as ff
+
 import numpy as np
 
-#printable_columns = ['company_name', 'global_score_logo_path', 'direct_score_short_label', 'complete_score_short_label', 'direct_score_hexa_color_code', 'complete_score_hexa_color_code']
+# Colorbars for bullet gauge
+color_bars = ['#820000',
+          '#C00000',
+          '#FF8939',
+          '#FEC800',
+          '#8CDF41',
+          '#0DB800']
+
 
 def get_filtered_data(df, selected_company):
     df_filtered = df[df['company_name'] == selected_company].reset_index(drop=True)
@@ -19,6 +31,78 @@ def get_data(df, column_name):
     '''
     value = df.loc[0, column_name]
     return value
+
+
+def build_bullet_gauge(engagement, accomplishment, color_accomplishment):
+    '''
+    Builds the custom Bullet Gauge for the dashboard.
+    Takes 2 values for the engagement & accomplishment from the selected_company
+    Returns the gauge with colors varying from green to dark red, with cursors on both sides representing:
+    - in white, on the right side: the engagement from the company, expressed as a score
+    - in color, on the left side: the actual accomplishments from the same company, expressed as a score
+    '''
+    
+    # Building custom bullet gauge
+    data = [      
+        {"ranges": [1, 7, 6], 
+         "measures":[x for x in range(1,7)]
+        }
+    ]
+
+    fig = ff.create_bullet(
+        data=data, 
+        measures='measures',
+        orientation='v',
+        measure_colors=['rgb(0,0,0)', 'rgb(0,0,0)'],
+        title=None,
+        width=800)
+
+
+    # Building left cursor: accomplishment
+    trace1 = go.Scatter(x=[0.25], y=[7-accomplishment],
+                        marker={'symbol':'arrow-right',
+                                'color':color_accomplishment,
+                                'size':20
+                               },
+                        name='Accomplishment',
+                        xaxis='x1',
+                        yaxis='y1',
+                        hovertemplate =
+                        'Accomplishment',
+                        showlegend = False)
+    
+    # Building right cursor: engagement
+    trace2 = go.Scatter(x=[0.75], y=[7-engagement],
+                        marker={'symbol':'arrow-left',
+                                'color':'white',
+                                'line': {'color':'black', 'width':1},
+                                'size':20},
+                        name='Engagement',
+                        xaxis='x1',
+                        yaxis='y1',
+                        hovertemplate ='Engagement',
+                        showlegend = False)
+
+    
+    # Fixing ticks
+    fig.update_xaxes(ticks="outside")
+    fig.update_yaxes(layer="below traces",
+                     tickmode = 'array',
+                     tickvals = [1, 2, 3, 4, 5, 6],
+                     ticktext = ['+1.5°', '', '+2°C','', '+4°C', ''])
+    
+    # Deleting the background
+    fig.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)')
+    
+    # Replacing the default colorscale with the custom colors
+    bar = [bar for bar in fig.data if bar.name == 'measures']
+    for i in range(len(bar)):
+        bar[i].marker.color = color_bars[i]
+    
+    # Adding cursors
+    fig.add_traces([trace1, trace2])
+
+    return fig
 
 
 def top_left(selected_company):
@@ -105,23 +189,35 @@ def bottom_left(selected_company):
             values.append(val-1)
         else: values.append(0)
     
-    colors = [get_data(df, 'direct_score_hexa_color_code'), '#FEC800', '#8CDF41', '#0DB800']
+    engagement = get_data(df, 'direct_score_commitments')
+    accomplishment = get_data(df, 'direct_score')
+    color_accomplishment = get_data(df, 'direct_score_hexa_color_code')
+    colors = [color_accomplishment, '#FEC800', '#8CDF41', '#0DB800']
     
-    return values, colors
+    return values, colors, engagement, accomplishment, color_accomplishment
 
 
 def generate_bottomleft_item(selected_company):
     scenarios=[selected_company, '1.5°C scenario', '1.8°C scenario', '2°C scenario']
-    values, colors = bottom_left(selected_company)
+    values, colors, engagement, accomplishment, color_accomplishment = bottom_left(selected_company)
    
     fig = go.Figure([go.Bar(x=scenarios, y=values, text=values, marker_color=colors)])
     fig.update_traces(texttemplate='%{text:.1%}', textposition='inside')
-    fig.update_layout(showlegend=False)
+    fig.update_layout(showlegend=False,
+                      paper_bgcolor='rgba(0,0,0,0)', 
+                      plot_bgcolor='rgba(0,0,0,0)')
     fig.update_yaxes(title="Réduction dees émissions de GES", tickformat=".0%")
     
     return html.Div([
-        dcc.Graph(figure=fig)
-    ])
+            dbc.Row([
+                dbc.Col(dcc.Graph(figure=fig,
+                        style={'width': '66%'}
+                        )),
+                dbc.Col(dcc.Graph(figure=build_bullet_gauge(engagement, accomplishment, color_accomplishment),
+                                  style={'width': '33%'}
+                                  ))
+            ])
+    ], className = card_style)
 
 def bottom_right(selected_company):
     df = get_filtered_data(t1b2_df, selected_company)
@@ -137,26 +233,38 @@ def bottom_right(selected_company):
         if val != np.nan:
             values.append(val-1)
         else: values.append(0)
+        
+    engagement = get_data(df, 'complete_score_commitments')
+    accomplishment = get_data(df, 'complete_score')
+    color_accomplishment = get_data(df, 'complete_score_hexa_color_code')
+    colors = [color_accomplishment, '#FEC800', '#8CDF41', '#0DB800']
     
-    colors = [get_data(df, 'direct_score_hexa_color_code'), '#FEC800', '#8CDF41', '#0DB800']
-    
-    return values, colors
+    return values, colors ,engagement, accomplishment, color_accomplishment
 
 
 def generate_bottomright_item(selected_company):
     scenarios=[selected_company, '1.5°C scenario', '1.8°C scenario', '2°C scenario']
-    values, colors = bottom_right(selected_company)
+    values, colors, engagement, accomplishment, color_accomplishment = bottom_right(selected_company)
    
     fig = go.Figure([go.Bar(x=scenarios, y=values, text=values, marker_color=colors)])
     fig.update_traces(texttemplate='%{text:.1%}', textposition='inside')
-    fig.update_layout(showlegend=False)
+    fig.update_layout(showlegend=False,
+                      paper_bgcolor='rgba(0,0,0,0)', 
+                      plot_bgcolor='rgba(0,0,0,0)')
     fig.update_yaxes(title="Réduction de l'empreinte carbone", tickformat=".0%")
     
     return html.Div([
-        dcc.Graph(figure=fig)
-    ])
+            dbc.Row([
+                dbc.Col(dcc.Graph(figure=fig,
+                        style={'width': '66%'}
+                        )),
+                dbc.Col(dcc.Graph(figure=build_bullet_gauge(engagement, accomplishment, color_accomplishment),
+                                  style={'width': '33%'}
+                                  ))
+            ])
+    ], className = card_style)
 
-    
+
 def action_suivi_actuel(selected_company):
     return dbc.Container([
         html.Div("Action actuelle - Suivi des engagements", className="h5"),
