@@ -35,7 +35,15 @@ cols_for_calculation = [
     'C2 final date', 
     'C2 2deg final',
     'C2 1,8deg final',
-    'C2 1,5deg final'
+    'C2 1,5deg final',
+    'E1 commitment direct',
+    'E1 score commitment direct',
+    'E1 reduction',
+    'E1 unit',
+    'E2 commitment complete',
+    'E2 score commitment',
+    'E2 reduction',
+    'E2 unit'
 ]
 
 
@@ -86,10 +94,16 @@ df_filtered= df_filtered.astype({
   'C1 final value': float, 
   'C1 2deg final': float, 
   'C1 1,8deg final': float,
-  'C1 1,5deg final': float
+  'C1 1,5deg final': float,
+  'E1 score commitment direct': int,
+  'E1 commitment direct': float, 
+  'E2 score commitment': int,
+  'E2 commitment complete': float
 }).astype({
   'C1 direct score': str, 
-  'C2 complete score': str
+  'C2 complete score': str,
+  'E1 score commitment direct': str,
+  'E2 score commitment': str
 })    
 
 
@@ -102,6 +116,19 @@ df_filtered = pd.merge(
   right_on='direct_score'
 ).rename(
   columns={'direct_score_label':'c1_label', 'hexcolor': 'c1_color'}
+).drop(
+  columns=['direct_score']
+)
+
+# E1 direct score references
+df_filtered = pd.merge(
+  df_filtered, 
+  direct_score_reference_table, 
+  how='left', 
+  left_on='E1 score commitment direct', 
+  right_on='direct_score'
+).rename(
+  columns={'direct_score_label':'e1_label', 'hexcolor': 'e1_color'}
 ).drop(
   columns=['direct_score']
 )
@@ -121,9 +148,18 @@ df_filtered = pd.merge(
 )
 
 
-# Adding the C1 & C2 score image
-# TODO
-# df_filtered['global_score_pic'] = 'assets/frames/climate_score/Frame_'+ df_filtered['global_score_label']+'.png' 
+# E2 direct score references
+df_filtered = pd.merge(
+  df_filtered, 
+  direct_score_reference_table, 
+  how='left', 
+  left_on='E2 score commitment', 
+  right_on='direct_score'
+).rename(
+  columns={'direct_score_label':'e2_label', 'hexcolor': 'e2_color'}
+).drop(
+  columns=['direct_score']
+)
 
 
 # Updating column names to match variables list
@@ -136,6 +172,12 @@ df_filtered = df_filtered.rename(
     'C2 complete score': 'complete_score',
     'c2_label': 'complete_score_short_label',
     'c2_color': 'complete_score_hexa_color_code',
+    'E1 commitment direct': 'direct_score_commitments',
+    'E1 score commitment direct': 'direct_rounding_score_commitments',
+    'e1_color': 'direct_ambition_hexa_color_code',
+    'E2 commitment complete': 'complete_score_commitments',
+    'E2 score commitment': 'complete_rounding_score_commitments',
+    'e2_color': 'complete_ambition_hexa_color_code',
     'C1 final value':'c1_final_value', 
     'C1 2deg final':'c1_2_deg_final', 
     'C1 1,8deg final':'c1_1_8_deg_final',
