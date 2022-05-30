@@ -25,7 +25,6 @@ def action_suivi_global(selected_company):
     company_global_information = get_company_global_information(t1b3_df, selected_company)
     return html.Div(
         children=[
-            html.Div("Action actuelle - Suivi des engagements", className="h5"),
             html.Div([
                 html.Div("AU GLOBAL", className="h6 fw-bold"),
                 html.Div([

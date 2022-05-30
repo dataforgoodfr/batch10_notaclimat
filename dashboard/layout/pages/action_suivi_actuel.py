@@ -1,4 +1,5 @@
 from dash import html, dcc
+import dash_bootstrap_components as dbc
 from utils import card_style
 import dash_daq as daq
 from utils import t1b2_df
@@ -79,12 +80,12 @@ def generate_topright_item(selected_company):
                             value=True
                         ),
                         html.Td('\u279c ' + value_topright,
-                                className="px-2"),
+                                className="px-2, text-center"),
                     ],
                             className="align-baseline")
                 ])
             ],
-            className="align-middle table table-borderless text-center mb-0"
+            className="align-middle table table-borderless mb-0"
         )
     ])
     
@@ -155,26 +156,20 @@ def generate_bottomright_item(selected_company):
         dcc.Graph(figure=fig)
     ])
 
-
+    
 def action_suivi_actuel(selected_company):
-    return html.Div(
-        children=[
-            html.Div("Action actuelle - Suivi des engagements", className="h5"),
-            html.Div(
-                children=[
-                    html.Div(
-                        children=[
-                        generate_topleft_item(selected_company),
-                        generate_topright_item(selected_company)
-                    ]),
-                    html.Div(
-                        children=[
-                        generate_bottomleft_item(selected_company),
-                        generate_bottomright_item(selected_company)
-                    ])
-                ]
-            )
-        ]
-    )
+    return dbc.Container([
+        html.Div("Action actuelle - Suivi des engagements", className="h5"),
+        html.Div(
+            dbc.Row([
+                dbc.Col(generate_topleft_item(selected_company), className = 'd-inline p-2',  style={'width': '49%'}),
+                dbc.Col(generate_topright_item(selected_company), className = 'd-inline p-2', style={'width': '49%'}),
+            ], style={'width': '80%', 'vertical-align': 'middle'})),
+        html.Div(
+            dbc.Row([
+                dbc.Col(generate_bottomleft_item(selected_company), className = 'd-inline p-2',  style={'width': '49%'}),
+                dbc.Col(generate_bottomright_item(selected_company), className = 'd-inline p-2', style={'width': '49%'}),
+            ], style={'vertical-align': 'middle'}))
+        ], className = card_style)
     
     
