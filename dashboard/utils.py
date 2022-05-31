@@ -49,7 +49,7 @@ def state_to_url(*state):
 
 
 t1b1_df = pd.read_csv('data/t1b1.csv')
-#t1b2_df = pd.read_csv('data/t1b2.csv') -- missing file in the main branch
+t1b2_df = pd.read_csv('data/t1b2.csv')
 t1b3_df = pd.read_csv('data/t1b3.csv')
 t1b4_df = pd.read_csv('data/t1b4.csv')
 t1b5_df = pd.read_csv('data/t1b5.csv', delimiter=';')

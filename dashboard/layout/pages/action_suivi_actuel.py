@@ -12,12 +12,7 @@ import plotly.figure_factory as ff
 import numpy as np
 
 # Colorbars for bullet gauge
-color_bars = ['#820000',
-          '#C00000',
-          '#FF8939',
-          '#FEC800',
-          '#8CDF41',
-          '#0DB800']
+color_bars = ['#820000', '#C00000', '#FF8939', '#FEC800', '#8CDF41', '#0DB800']
 
 
 def get_filtered_data(df, selected_company):
@@ -41,64 +36,64 @@ def build_bullet_gauge(engagement, accomplishment, color_accomplishment):
     - in white, on the right side: the engagement from the company, expressed as a score
     - in color, on the left side: the actual accomplishments from the same company, expressed as a score
     '''
-    
+
     # Building custom bullet gauge
-    data = [      
-        {"ranges": [1, 7, 6], 
-         "measures":[x for x in range(1,7)]
-        }
-    ]
+    data = [{"ranges": [1, 7, 6], "measures": [x for x in range(1, 7)]}]
 
-    fig = ff.create_bullet(
-        data=data, 
-        measures='measures',
-        orientation='v',
-        measure_colors=['rgb(0,0,0)', 'rgb(0,0,0)'],
-        title=None,
-        width=800)
-
+    fig = ff.create_bullet(data=data,
+                           measures='measures',
+                           orientation='v',
+                           measure_colors=['rgb(0,0,0)', 'rgb(0,0,0)'],
+                           title=None,
+                           width=800)
 
     # Building left cursor: accomplishment
-    trace1 = go.Scatter(x=[0.25], y=[7-accomplishment],
-                        marker={'symbol':'arrow-right',
-                                'color':color_accomplishment,
-                                'size':20
-                               },
+    trace1 = go.Scatter(x=[0.25],
+                        y=[7 - accomplishment],
+                        marker={
+                            'symbol': 'arrow-right',
+                            'color': color_accomplishment,
+                            'size': 20
+                        },
                         name='Accomplishment',
                         xaxis='x1',
                         yaxis='y1',
-                        hovertemplate =
-                        'Accomplishment',
-                        showlegend = False)
-    
+                        hovertemplate='Accomplishment',
+                        showlegend=False)
+
     # Building right cursor: engagement
-    trace2 = go.Scatter(x=[0.75], y=[7-engagement],
-                        marker={'symbol':'arrow-left',
-                                'color':'white',
-                                'line': {'color':'black', 'width':1},
-                                'size':20},
+    trace2 = go.Scatter(x=[0.75],
+                        y=[7 - engagement],
+                        marker={
+                            'symbol': 'arrow-left',
+                            'color': 'white',
+                            'line': {
+                                'color': 'black',
+                                'width': 1
+                            },
+                            'size': 20
+                        },
                         name='Engagement',
                         xaxis='x1',
                         yaxis='y1',
-                        hovertemplate ='Engagement',
-                        showlegend = False)
+                        hovertemplate='Engagement',
+                        showlegend=False)
 
-    
     # Fixing ticks
     fig.update_xaxes(ticks="outside")
     fig.update_yaxes(layer="below traces",
-                     tickmode = 'array',
-                     tickvals = [1, 2, 3, 4, 5, 6],
-                     ticktext = ['+1.5°', '', '+2°C','', '+4°C', ''])
-    
+                     tickmode='array',
+                     tickvals=[1, 2, 3, 4, 5, 6],
+                     ticktext=['+1.5°', '', '+2°C', '', '+4°C', ''])
+
     # Deleting the background
     fig.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)')
-    
+
     # Replacing the default colorscale with the custom colors
     bar = [bar for bar in fig.data if bar.name == 'measures']
     for i in range(len(bar)):
         bar[i].marker.color = color_bars[i]
-    
+
     # Adding cursors
     fig.add_traces([trace1, trace2])
 
@@ -112,30 +107,24 @@ def top_left(selected_company):
     pic = 'assets/frames/Picto_usine.png'
     return value, color, pic
 
+
 def generate_topleft_item(selected_company):
     value_topleft, color_topleft, pic_topleft = top_left(selected_company)
     return html.Div([
-        html.Table(
-            [
-                html.Tbody([
-                    html.Tr([
-                        html.Td(html.Img(src=pic_topleft),
-                                rowSpan=2,
-                                className="me-1"),
-                        html.Td('Réduction de ses propres émissions', className="fw-bold"),
-                    ]),
-                    html.Tr([
-                        daq.Indicator(color=color_topleft,
-                            value=True
-                        ),
-                        html.Td('\u279c ' + value_topleft,
-                                className="px-2"),
-                    ],
-                            className="align-baseline")
-                ])
-            ],
-            className="align-middle table table-borderless text-center mb-0"
-        )
+        html.Table([
+            html.Tbody([
+                html.Tr([
+                    html.Td(html.Img(src=pic_topleft), rowSpan=2, className="me-1"),
+                    html.Td('Réduction de ses propres émissions', className="fw-bold"),
+                ]),
+                html.Tr([
+                    daq.Indicator(color=color_topleft, value=True),
+                    html.Td('\u279c ' + value_topleft, className="px-2"),
+                ],
+                        className="align-baseline")
+            ])
+        ],
+                   className="align-middle table table-borderless text-center mb-0")
     ])
 
 
@@ -150,119 +139,101 @@ def top_right(selected_company):
 def generate_topright_item(selected_company):
     value_topright, color_topright, pic_topright = top_right(selected_company)
     return html.Div([
-        html.Table(
-            [
-                html.Tbody([
-                    html.Tr([
-                        html.Td(html.Img(src=pic_topright),
-                                rowSpan=2,
-                                className="me-1"),
-                        html.Td('Réduction de son empreinte carbone', className="fw-bold"),
-                    ]),
-                    html.Tr([
-                        daq.Indicator(color=color_topright,
-                            value=True
-                        ),
-                        html.Td('\u279c ' + value_topright,
-                                className="px-2, text-center"),
-                    ],
-                            className="align-baseline")
-                ])
-            ],
-            className="align-middle table table-borderless mb-0"
-        )
+        html.Table([
+            html.Tbody([
+                html.Tr([
+                    html.Td(html.Img(src=pic_topright), rowSpan=2, className="me-1"),
+                    html.Td('Réduction de son empreinte carbone', className="fw-bold"),
+                ]),
+                html.Tr([
+                    daq.Indicator(color=color_topright, value=True),
+                    html.Td('\u279c ' + value_topright, className="px-2, text-center"),
+                ],
+                        className="align-baseline")
+            ])
+        ],
+                   className="align-middle table table-borderless mb-0")
     ])
-    
-  
+
+
 def bottom_left(selected_company):
     df = get_filtered_data(t1b2_df, selected_company)
     values = []
-    col_list = ['c1_final_value', 
-    'c1_2_deg_final', 
-    'c1_1_8_deg_final',
-    'c1_1_5_deg_final'
-    ]
-    
+    col_list = ['c1_final_value', 'c1_2_deg_final', 'c1_1_8_deg_final', 'c1_1_5_deg_final']
+
     for col in col_list:
         val = get_data(df, col)
         if val != np.nan:
-            values.append(val-1)
-        else: values.append(0)
-    
+            values.append(val - 1)
+        else:
+            values.append(0)
+
     engagement = get_data(df, 'direct_score_commitments')
     accomplishment = get_data(df, 'direct_score')
     color_accomplishment = get_data(df, 'direct_score_hexa_color_code')
     colors = [color_accomplishment, '#FEC800', '#8CDF41', '#0DB800']
-    
+
     return values, colors, engagement, accomplishment, color_accomplishment
 
 
 def generate_bottomleft_item(selected_company):
-    scenarios=[selected_company, '1.5°C scenario', '1.8°C scenario', '2°C scenario']
+    scenarios = [selected_company, '1.5°C scenario', '1.8°C scenario', '2°C scenario']
     values, colors, engagement, accomplishment, color_accomplishment = bottom_left(selected_company)
-   
+
     fig = go.Figure([go.Bar(x=scenarios, y=values, text=values, marker_color=colors)])
     fig.update_traces(texttemplate='%{text:.1%}', textposition='inside')
-    fig.update_layout(showlegend=False,
-                      paper_bgcolor='rgba(0,0,0,0)', 
-                      plot_bgcolor='rgba(0,0,0,0)')
+    fig.update_layout(showlegend=False, paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)')
     fig.update_yaxes(title="Réduction dees émissions de GES", tickformat=".0%")
-    
+
     return html.Div([
-            dbc.Row([
-                dbc.Col(dcc.Graph(figure=fig,
-                        style={'width': '66%'}
-                        )),
-                dbc.Col(dcc.Graph(figure=build_bullet_gauge(engagement, accomplishment, color_accomplishment),
-                                  style={'width': '33%'}
-                                  ))
-            ])
-    ], className = card_style)
+        dbc.Row([
+            dbc.Col(dcc.Graph(figure=fig, style={'width': '66%'})),
+            dbc.Col(
+                dcc.Graph(figure=build_bullet_gauge(engagement, accomplishment, color_accomplishment),
+                          style={'width': '33%'}))
+        ])
+    ],
+                    className="d-flex flex-column border")
+
 
 def bottom_right(selected_company):
     df = get_filtered_data(t1b2_df, selected_company)
     values = []
-    col_list = ['c2_final_value', 
-    'c2_2_deg_final', 
-    'c2_1_8_deg_final',
-    'c2_1_5_deg_final'
-    ]
-    
+    col_list = ['c2_final_value', 'c2_2_deg_final', 'c2_1_8_deg_final', 'c2_1_5_deg_final']
+
     for col in col_list:
         val = get_data(df, col)
         if val != np.nan:
-            values.append(val-1)
-        else: values.append(0)
-        
+            values.append(val - 1)
+        else:
+            values.append(0)
+
     engagement = get_data(df, 'complete_score_commitments')
     accomplishment = get_data(df, 'complete_score')
     color_accomplishment = get_data(df, 'complete_score_hexa_color_code')
     colors = [color_accomplishment, '#FEC800', '#8CDF41', '#0DB800']
-    
-    return values, colors ,engagement, accomplishment, color_accomplishment
+
+    return values, colors, engagement, accomplishment, color_accomplishment
 
 
 def generate_bottomright_item(selected_company):
-    scenarios=[selected_company, '1.5°C scenario', '1.8°C scenario', '2°C scenario']
+    scenarios = [selected_company, '1.5°C scenario', '1.8°C scenario', '2°C scenario']
     values, colors, engagement, accomplishment, color_accomplishment = bottom_right(selected_company)
-   
+
     fig = go.Figure([go.Bar(x=scenarios, y=values, text=values, marker_color=colors)])
     fig.update_traces(texttemplate='%{text:.1%}', textposition='inside')
-    fig.update_layout(showlegend=False,
-                      paper_bgcolor='rgba(0,0,0,0)', 
-                      plot_bgcolor='rgba(0,0,0,0)')
+    fig.update_layout(showlegend=False, paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)')
     fig.update_yaxes(title="Réduction de l'empreinte carbone", tickformat=".0%")
-    
+
     return html.Div([
-            dbc.Row([
-                dbc.Col(dcc.Graph(figure=fig,
-                        style={'width': '66%'}
-                        )),
-                dbc.Col(dcc.Graph(figure=build_bullet_gauge(engagement, accomplishment, color_accomplishment),
-                                  style={'width': '33%'}
-                                  ))
-            ])
-    ], className = card_style)
+        dbc.Row([
+            dbc.Col(dcc.Graph(figure=fig, style={'width': '66%'})),
+            dbc.Col(
+                dcc.Graph(figure=build_bullet_gauge(engagement, accomplishment, color_accomplishment),
+                          style={'width': '33%'}))
+        ])
+    ],
+                    className="d-flex flex-column border")
 
 
 def action_suivi_actuel(selected_company):
@@ -270,14 +241,18 @@ def action_suivi_actuel(selected_company):
         html.Div("Action actuelle - Suivi des engagements", className="h5"),
         html.Div(
             dbc.Row([
-                dbc.Col(generate_topleft_item(selected_company), className = 'd-inline p-2',  style={'width': '49%'}),
-                dbc.Col(generate_topright_item(selected_company), className = 'd-inline p-2', style={'width': '49%'}),
-            ], style={'width': '80%', 'vertical-align': 'middle'})),
+                dbc.Col(generate_topleft_item(selected_company), className='d-inline p-2', style={'width': '49%'}),
+                dbc.Col(generate_topright_item(selected_company), className='d-inline p-2', style={'width': '49%'}),
+            ],
+                    style={
+                        'width': '80%',
+                        'vertical-align': 'middle'
+                    })),
         html.Div(
             dbc.Row([
-                dbc.Col(generate_bottomleft_item(selected_company), className = 'd-inline p-2',  style={'width': '49%'}),
-                dbc.Col(generate_bottomright_item(selected_company), className = 'd-inline p-2', style={'width': '49%'}),
-            ], style={'vertical-align': 'middle'}))
-        ], className = card_style)
-    
-    
+                dbc.Col(generate_bottomleft_item(selected_company), className='d-inline p-2', style={'width': '49%'}),
+                dbc.Col(generate_bottomright_item(selected_company), className='d-inline p-2', style={'width': '49%'}),
+            ],
+                    style={'vertical-align': 'middle'}))
+    ],
+                         className="d-flex flex-column")

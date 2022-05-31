@@ -1,4 +1,3 @@
-
 from dash import html
 from utils import card_style, t1b3_df
 
@@ -26,7 +25,7 @@ def action_suivi_global(selected_company):
     return html.Div(
         children=[
             html.Div([
-                html.Div("AU GLOBAL", className="h6 fw-bold"),
+                html.Div("AU GLOBAL", className="h5 fw-bold"),
                 html.Div([
                     html.Table(
                         [
@@ -43,14 +42,18 @@ def action_suivi_global(selected_company):
                                 ]),
                                 # ]),
                                 html.Tr([
-                                    html.Td(company_global_information['global_score_short_label'], className="px-2", 
-                                        style={'color': company_global_information['global_score_hexa_color_code']}),
-                                    html.Td('\u279c ' + company_global_information['direct_score_short_label'],
-                                            className="px-2", 
-                                            style={'color': company_global_information['direct_score_hexa_color_code']}),
-                                    html.Td('\u279c ' + company_global_information['complete_score_short_label'],
+                                    html.Td(company_global_information['global_score_short_label'],
                                             className="px-2",
-                                            style={'color': company_global_information['complete_score_hexa_color_code']}),
+                                            style={'color': company_global_information['global_score_hexa_color_code']
+                                                   }),
+                                    html.Td('\u279c ' + company_global_information['direct_score_short_label'],
+                                            className="px-2",
+                                            style={'color': company_global_information['direct_score_hexa_color_code']
+                                                   }),
+                                    html.Td(
+                                        '\u279c ' + company_global_information['complete_score_short_label'],
+                                        className="px-2",
+                                        style={'color': company_global_information['complete_score_hexa_color_code']}),
                                     html.Td(company_global_information['comment'])
                                 ],
                                         className="align-baseline")
@@ -60,5 +63,4 @@ def action_suivi_global(selected_company):
                 ])
             ])
         ],
-        className=card_style)
-
+        className=card_style + " mx-2 w-auto")
