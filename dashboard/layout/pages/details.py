@@ -44,7 +44,8 @@ def details(selected_company):
                               }],
                               "showlegend": False
                           }
-                      })
+                      },
+                     config= {'displayModeBar': False})
         ],
                  className="m-0 p-0")
     ],
