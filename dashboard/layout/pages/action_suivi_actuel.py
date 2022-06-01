@@ -44,8 +44,7 @@ def build_bullet_gauge(engagement, accomplishment, color_accomplishment):
                            measures='measures',
                            orientation='v',
                            measure_colors=['rgb(0,0,0)', 'rgb(0,0,0)'],
-                           title=None,
-                           width=800)
+                           title=None)
 
     # Building left cursor: accomplishment
     trace1 = go.Scatter(x=[0.25],
@@ -53,7 +52,7 @@ def build_bullet_gauge(engagement, accomplishment, color_accomplishment):
                         marker={
                             'symbol': 'arrow-right',
                             'color': color_accomplishment,
-                            'size': 20
+                            'size': 25
                         },
                         name='Accomplishment',
                         xaxis='x1',
@@ -187,10 +186,10 @@ def generate_bottomleft_item(selected_company):
 
     return html.Div([
         dbc.Row([
-            dbc.Col(dcc.Graph(figure=fig, style={'width': '66%'})),
+            dbc.Col(dcc.Graph(figure=fig), style={'width': '66%', 'height': '100%'}),
             dbc.Col(
-                dcc.Graph(figure=build_bullet_gauge(engagement, accomplishment, color_accomplishment),
-                          style={'width': '33%'}))
+                dcc.Graph(figure=build_bullet_gauge(engagement, accomplishment, color_accomplishment), style={'height': '90vh'}),
+                          style={'width': '33%', 'height': '100%'})
         ])
     ],
                     className="d-flex flex-column border")
@@ -227,10 +226,10 @@ def generate_bottomright_item(selected_company):
 
     return html.Div([
         dbc.Row([
-            dbc.Col(dcc.Graph(figure=fig, style={'width': '66%'})),
+            dbc.Col(dcc.Graph(figure=fig), style={'width': '66%'}),
             dbc.Col(
-                dcc.Graph(figure=build_bullet_gauge(engagement, accomplishment, color_accomplishment),
-                          style={'width': '33%'}))
+                dcc.Graph(figure=build_bullet_gauge(engagement, accomplishment, color_accomplishment), style={'height': '90%'}),
+                          style={'width': '33%'})
         ])
     ],
                     className="d-flex flex-column border")
@@ -254,5 +253,5 @@ def action_suivi_actuel(selected_company):
                 dbc.Col(generate_bottomright_item(selected_company), className='d-inline p-2', style={'width': '49%'}),
             ],
                     style={'vertical-align': 'middle'}))
-    ],
-                         className="d-flex flex-column")
+    ])
+    #,                         className="d-flex flex-column")
