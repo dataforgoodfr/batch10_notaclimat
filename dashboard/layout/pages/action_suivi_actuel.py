@@ -40,14 +40,23 @@ def build_bullet_gauge(engagement, accomplishment, color_accomplishment):
     # Building custom bullet gauge
     data = [{"ranges": [1, 7, 6], "measures": [x for x in range(1, 7)]}]
 
-    fig = ff.create_bullet(data=data,
-                           measures='measures',
-                           orientation='v',
-                           measure_colors=['rgb(0,0,0)', 'rgb(0,0,0)'],
-                           title=None)
+    traces = []
+    fig = go.Figure()
+    
+    for i in range(0,6):
+        trace = go.Bar(x=[0],
+            y=[1],
+            orientation='v',
+            width=0.1,
+            marker_color=color_bars[i],
+            showlegend=False)
+        traces.insert(0,trace)
+
+    fig.add_traces(traces)
+    fig.update_layout(barmode='stack')
 
     # Building left cursor: accomplishment
-    trace1 = go.Scatter(x=[0.25],
+    trace1 = go.Scatter(x=[-0.11],
                         y=[7 - accomplishment],
                         marker={
                             'symbol': 'arrow-right',
@@ -61,7 +70,7 @@ def build_bullet_gauge(engagement, accomplishment, color_accomplishment):
                         showlegend=False)
 
     # Building right cursor: engagement
-    trace2 = go.Scatter(x=[0.75],
+    trace2 = go.Scatter(x=[0.11],
                         y=[7 - engagement],
                         marker={
                             'symbol': 'arrow-left',
@@ -79,7 +88,8 @@ def build_bullet_gauge(engagement, accomplishment, color_accomplishment):
                         showlegend=False)
 
     # Fixing ticks
-    fig.update_xaxes(ticks="outside")
+    fig.update_xaxes(ticks="outside",
+                     nticks=3)
     fig.update_yaxes(layer="below traces",
                      tickmode='array',
                      tickvals=[1, 2, 3, 4, 5, 6],
@@ -87,11 +97,6 @@ def build_bullet_gauge(engagement, accomplishment, color_accomplishment):
 
     # Deleting the background
     fig.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)')
-
-    # Replacing the default colorscale with the custom colors
-    bar = [bar for bar in fig.data if bar.name == 'measures']
-    for i in range(len(bar)):
-        bar[i].marker.color = color_bars[i]
 
     # Adding cursors
     fig.add_traces([trace1, trace2])
@@ -236,10 +241,20 @@ def generate_bottomright_item(selected_company):
 
     return html.Div([
         dbc.Row([
-            dbc.Col(dcc.Graph(figure=fig), style={'width': '66%'}),
-            dbc.Col(dcc.Graph(figure=build_bullet_gauge(engagement, accomplishment, color_accomplishment),
-                              style={'height': '90%'}),
-                    style={'width': '33%'})
+            dbc.Col(dcc.Graph(figure=fig),
+                    style={
+                        'width': '66%',
+                        'min-width': '66%',
+                        'max-width': '66%',
+                        'height': '100%'
+                    }),
+            dbc.Col(dcc.Graph(figure=build_bullet_gauge(engagement, accomplishment, color_accomplishment)),
+                    style={
+                        'width': '33%',
+                        'min-width': '33%',
+                        'max-width': '33%',
+                        'height': '100%'
+                    })
         ])
     ],
                     className="d-flex flex-column border")
