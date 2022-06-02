@@ -186,10 +186,20 @@ def generate_bottomleft_item(selected_company):
 
     return html.Div([
         dbc.Row([
-            dbc.Col(dcc.Graph(figure=fig), style={'width': '66%', 'height': '100%'}),
-            dbc.Col(
-                dcc.Graph(figure=build_bullet_gauge(engagement, accomplishment, color_accomplishment), style={'height': '90vh'}),
-                          style={'width': '33%', 'height': '100%'})
+            dbc.Col(dcc.Graph(figure=fig),
+                    style={
+                        'width': '66%',
+                        'min-width': '66%',
+                        'max-width': '66%',
+                        'height': '100%'
+                    }),
+            dbc.Col(dcc.Graph(figure=build_bullet_gauge(engagement, accomplishment, color_accomplishment)),
+                    style={
+                        'width': '33%',
+                        'min-width': '33%',
+                        'max-width': '33%',
+                        'height': '100%'
+                    })
         ])
     ],
                     className="d-flex flex-column border")
@@ -227,9 +237,9 @@ def generate_bottomright_item(selected_company):
     return html.Div([
         dbc.Row([
             dbc.Col(dcc.Graph(figure=fig), style={'width': '66%'}),
-            dbc.Col(
-                dcc.Graph(figure=build_bullet_gauge(engagement, accomplishment, color_accomplishment), style={'height': '90%'}),
-                          style={'width': '33%'})
+            dbc.Col(dcc.Graph(figure=build_bullet_gauge(engagement, accomplishment, color_accomplishment),
+                              style={'height': '90%'}),
+                    style={'width': '33%'})
         ])
     ],
                     className="d-flex flex-column border")
