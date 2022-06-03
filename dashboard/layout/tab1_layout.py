@@ -10,7 +10,8 @@ from layout.pages.sector_compare import sector_compare
 # layout
 def tab1_layout(selected_company):
     if selected_company is None:
-        return html.Div(children=[html.Div(["Please select a company to continue"])])
+        #return html.Div(children=[html.Div(["Please select a company to continue"])]) #English version
+        return html.Div(children=[html.Div(["Sélectionnez une société pour continuer"])]) #French version
     elif type(selected_company) is list:
         selected_company = selected_company[0]
 
