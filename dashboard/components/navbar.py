@@ -27,7 +27,8 @@ def select_company_component(currentTab, state):
                 #value='Andros'
                 multi=isCurrentTab(currentTab, Pages.COMPARE),
                 searchable=True,
-                placeholder='Select a company',
+                #placeholder='Select a company', #English version
+                placeholder='Sélectionnez une société', #French version                
                 value=(default_value),
                 className=(' w-100' if isCurrentTab(currentTab, Pages.COMPANY) else ' w-100')),
         ],
