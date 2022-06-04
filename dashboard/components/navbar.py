@@ -18,6 +18,20 @@ def select_company_component(currentTab, state):
 
     return html.Div(
         children=[
+            html.Div([
+                html.Div([
+                    html.Img(src="/assets/Pics/nav_logo.png", className="h-100 p-2"),
+                    html.A("Accueil",
+                           className="text-decoration-none text-primary fs-5 ms-4",
+                           href="https://notaclimat.com/")
+                ],
+                         className="d-flex align-items-center h-100"),
+                html.A("Ajouter les données d'une entreprise",
+                       className="bg-primary btn d-block px-3 py-2 rounded-2 text-decoration-none text-white",
+                       href="https://notaclimat.com/new_data")
+            ],
+                     className="d-flex h-12 bg-white align-items-center justify-content-between px-4",
+                     style={"height": '65px'}),
             dcc.Dropdown(
                 id='company_select',
                 options=[{
@@ -29,9 +43,9 @@ def select_company_component(currentTab, state):
                 searchable=True,
                 placeholder='Select a company',
                 value=(default_value),
-                className=(' w-100' if isCurrentTab(currentTab, Pages.COMPANY) else ' w-100')),
+                className=(' w-98' if isCurrentTab(currentTab, Pages.COMPANY) else ' w-98') + " mx-2 mt-2 mb-1"),
         ],
-        className="bg-primary px-4 py-3 w-100")
+        className="bg-primary w-100 pb-2")
 
 
 def getNavitemClass(currentTab, tabId):
@@ -72,12 +86,12 @@ def navbar_component(currentTab, *current_values):
                         #Navlink accueil
                         dbc.NavItem(dbc.NavLink("Vue entreprise",
                                                 href=getHref(Pages.COMPANY, *current_values),
-                                                class_name="h4 text-white my-2"),
+                                                class_name="h5 text-white my-1"),
                                     class_name=getNavitemClass(currentTab, Pages.COMPANY)),
                         #Navlink dashboard
                         dbc.NavItem(dbc.NavLink("Vue comparative",
                                                 href=getHref(Pages.COMPARE, *current_values),
-                                                class_name="h4 text-white my-2"),
+                                                class_name="h5 text-white my-1"),
                                     class_name=getNavitemClass(currentTab, Pages.COMPARE)),
                     ],
                     class_name="row text-center w-100 g-0")
