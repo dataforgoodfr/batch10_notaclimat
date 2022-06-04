@@ -14,9 +14,8 @@ card_style = "row card rounded p-3"
 
 component_ids = ['company_select']
 
+
 # Utils
-
-
 def isCurrentTab(currentTab, page):
     currentTab = currentTab.replace('/', "").upper()
 
@@ -37,9 +36,7 @@ def parse_url(url):
 
 
 # Usage
-#   # state_to_url(state of component_ids[0], state of component_ids[1], ...)
-
-
+# state_to_url(state of component_ids[0], state of component_ids[1], ...)
 def state_to_url(*state):
     if not state or state[0] is None or len(state[0]) == 0:
         return ''

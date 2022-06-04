@@ -39,29 +39,25 @@ def build_bullet_gauge(engagement, accomplishment, color_accomplishment):
 
     # Building custom bullet gauge
     data = [{"ranges": [1, 7, 6], "measures": [x for x in range(1, 7)]}]
+    width = 0.5
 
     traces = []
     fig = go.Figure()
-    
-    for i in range(0,6):
-        trace = go.Bar(x=[0],
-            y=[1],
-            orientation='v',
-            width=0.1,
-            marker_color=color_bars[i],
-            showlegend=False)
-        traces.insert(0,trace)
+
+    for i in range(0, 6):
+        trace = go.Bar(x=[0], y=[1], orientation='v', width=width, marker_color=color_bars[i], showlegend=False)
+        traces.insert(0, trace)
 
     fig.add_traces(traces)
     fig.update_layout(barmode='stack')
 
     # Building left cursor: accomplishment
-    trace1 = go.Scatter(x=[-0.11],
+    trace1 = go.Scatter(x=[-0.1 - width],
                         y=[7 - accomplishment],
                         marker={
                             'symbol': 'arrow-right',
                             'color': color_accomplishment,
-                            'size': 25
+                            'size': 25,
                         },
                         name='Accomplishment',
                         xaxis='x1',
@@ -70,7 +66,7 @@ def build_bullet_gauge(engagement, accomplishment, color_accomplishment):
                         showlegend=False)
 
     # Building right cursor: engagement
-    trace2 = go.Scatter(x=[0.11],
+    trace2 = go.Scatter(x=[0.1 + width],
                         y=[7 - engagement],
                         marker={
                             'symbol': 'arrow-left',
@@ -88,8 +84,7 @@ def build_bullet_gauge(engagement, accomplishment, color_accomplishment):
                         showlegend=False)
 
     # Fixing ticks
-    fig.update_xaxes(ticks="outside",
-                     nticks=3)
+    fig.update_xaxes(ticks="outside", nticks=3)
     fig.update_yaxes(layer="below traces",
                      tickmode='array',
                      tickvals=[1, 2, 3, 4, 5, 6],
@@ -193,18 +188,19 @@ def generate_bottomleft_item(selected_company):
         dbc.Row([
             dbc.Col(dcc.Graph(figure=fig),
                     style={
-                        'width': '66%',
-                        'min-width': '66%',
-                        'max-width': '66%',
+                        'width': '60%',
+                        'min-width': '60%',
+                        'max-width': '60%',
                         'height': '100%'
                     }),
             dbc.Col(dcc.Graph(figure=build_bullet_gauge(engagement, accomplishment, color_accomplishment)),
                     style={
-                        'width': '33%',
-                        'min-width': '33%',
-                        'max-width': '33%',
+                        'width': '40%',
+                        'min-width': '40%',
+                        'max-width': '40%',
                         'height': '100%'
-                    })
+                    },
+                    className="p-0")
         ])
     ],
                     className="d-flex flex-column border")
@@ -243,18 +239,19 @@ def generate_bottomright_item(selected_company):
         dbc.Row([
             dbc.Col(dcc.Graph(figure=fig),
                     style={
-                        'width': '66%',
-                        'min-width': '66%',
-                        'max-width': '66%',
+                        'width': '60%',
+                        'min-width': '60%',
+                        'max-width': '60%',
                         'height': '100%'
                     }),
             dbc.Col(dcc.Graph(figure=build_bullet_gauge(engagement, accomplishment, color_accomplishment)),
                     style={
-                        'width': '33%',
-                        'min-width': '33%',
-                        'max-width': '33%',
+                        'width': '40%',
+                        'min-width': '40%',
+                        'max-width': '40%',
                         'height': '100%'
-                    })
+                    },
+                    className="p-0")
         ])
     ],
                     className="d-flex flex-column border")

@@ -61,7 +61,7 @@ def generate_html_table(df, max_rows, selected_company):
         ],
                  className="flex-shrink-1 overflow-auto")
     ],
-                    className=card_style + " flex-nowrap h-100 p-3")
+                    className=card_style + " flex-nowrap p-3")
 
 
 def sector_compare(selected_company):
