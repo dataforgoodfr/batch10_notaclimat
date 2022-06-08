@@ -3,66 +3,73 @@
   #/home/crocefisso/Git/batch10_notaclimat/dashboard/README.org
 * Design
 ** Mockup
-   The dashboard is composed of two pages, accessible via two tabs. The first tab shows information about a single company and the second compares multiple companies.
-   - Tab 1 : Vue entreprise
+   The dashboard is composed of two pages, accessible via two tabs. The first tab shows information about a single company and the second compares multiple companies. Here is the initial mockup (some charts have been redesigned during the implementing phase):
+   - Tab 1 : Company view
      #+ATTR_HTML: :width 1200px
      [[./Pics/tab1.png]]
-   - Tab 2 : Vue comparative
+   - Tab 2 : Comparative vue
      #+ATTR_HTML: :width 1200px
      [[./Pics/tab2.png]]
-   
+** COMMENT Imlementation
+   - Tab 1 : Company view
+     #+ATTR_HTML: :width 1200px
+     [[./Pics/tab1.png]]
+   - Tab 2 : Comparative vue
+     #+ATTR_HTML: :width 1200px
+     [[./Pics/tab2.png]]
 * Variables
-  |---------------------------------------+------------------------------------------+-----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-  | Variable name                         | Variable is required by                  | Data type | Description                                                                                                                                                                                         |
-  |---------------------------------------+------------------------------------------+-----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-  | =company_name=                        | t1b1, t1b2, t1b3, t1b4, t1b5, t1b6, t1b7 | =str=     | Name of the company                                                                                                                                                                                 |
-  | =company_id=                          | t1b2                                     | =str=     | Id of the company                                                                                                                                                                                   |
-  | =c1_final_value=                      | t1b2                                     | =float=   | GHG Emissions ratio given by Nota Climat to the company corresponding to its scope 1 & 2, expressed as an index (initial_value=1)                                                                   |
-  | =c1_2deg_final=                       | t1b2                                     | =float=   | GHG Emissions ratio as calculated to be in line with the 2 degrees trajectory                                                                                                                       |
-  | =c1_1_8deg_final=                     | t1b2                                     | =float=   | GHG Emissions ratio as calculated to be in line with the 1.8 degrees trajectory                                                                                                                     |
-  | =c1_1_5_deg_final=                    | t1b2                                     | =float=   | GHG Emissions ratio as calculated to be in line with the 1.5 degrees trajectory                                                                                                                     |
-  | =c2_final_value=                      | t1b2                                     | =float=   | Carbon footprint ratio given by Nota Climat to the company corresponding to its scope 1, 2 and 3, expressed as an index (initial_value=1)                                                           |
-  | =c2_2deg_final=                       | t1b2                                     | =float=   | Carbon footprint ratio ratio as calculated to be in line with the 2 degrees trajectory                                                                                                              |
-  | =c2_1_8deg_final=                     | t1b2                                     | =float=   | Carbon footprint ratio ratio as calculated to be in line with the 1.8 degrees trajectory                                                                                                            |
-  | =c2_1_5deg_final=                     | t1b2                                     | =float=   | Carbon footprint ratio ratio as calculated to be in line with the 1.5 degrees trajectory                                                                                                            |
-  | =C1_initial_date=                     | t1b2                                     | =str=     | Initial date used to calculate GHG ratio                                                                                                                                                            |
-  | =C1_final_date=                       | t1b2                                     | =str=     | Final date used to calculate GHG ratio                                                                                                                                                              |
-  | =C2_initial_date=                     | t1b2                                     | =str=     | Initial date used to calculate Carbon footprint ratio                                                                                                                                               |
-  | =C2_final_date=                       | t1b2                                     | =str=     | Final date used to calculate Carbon footprint ratio                                                                                                                                                 |
-  | =global_score_hexa_color_code=        | t1b3                                     | =str=     | Hexadecimal color code corresponding to the company's global score                                                                                                                                  |
-  | =global_score_short_label=            | t1b3                                     | =str=     | Short label displayed corresponding to the company's global score                                                                                                                                   |
-  | =comment=                             | t1b3                                     | =str=     | Comment provided by Nota Climat (company's commitment vs its GHG emission evolution)                                                                                                                |
-  | =global_score=                        | t1b3, t1b4                               | =int=     | Company's Global score given by Nota Climat                                                                                                                                                         |
-  | =global_score_logo_path=              | t1b3, t1b4                               | =str=     | Path of the company's global score logo                                                                                                                                                             |
-  | =direct_score=                        | t1b3, t1b4                               | =int=     | Company's direct score (scope 1 & 2) given by Nota Climat                                                                                                                                           |
-  | =direct_score_hexa_color_code=        | t1b3, t1b4                               | =str=     | Hexadecimal color code corresponding to the company's direct score                                                                                                                                  |
-  | =direct_score_short_label=            | t1b3, t1b4                               | =str=     | Short label displayed corresponding to the company's direct score                                                                                                                                   |
-  | =complete_score=                      | t1b3, t1b4                               | =int=     | Company's complete score (scope 1, 2 & 3) given by Nota Climat                                                                                                                                      |
-  | =complete_score_hexa_color_code=      | t1b3, t1b4                               | =str=     | Hexadecimal color code corresponding to the company's complete score                                                                                                                                |
-  | =complete_score_short_label=          | t1b3, t1b4                               | =str=     | Short label displayed corresponding to the company's complete score                                                                                                                                 |
-  | =sector=                              | t1b4, t1b7                               | =str=     | Company's sector                                                                                                                                                                                    |
-  | =direct_commitments_sentence=         | t1b5                                     | =str=     | Description of the commitments for scope 1 & 2                                                                                                                                                      |
-  | =complete_commitments_sentence=       | t1b5                                     | =str=     | Description of the commitments for score 1, 2 & 3                                                                                                                                                   |
-  | =direct_ambition_long_label=          | t1b5                                     | =str=     | Ambition of the commitments for scope 1 & 2                                                                                                                                                         |
-  | =complete_ambition_long_label=        | t1b5                                     | =str=     | Ambition of the commitments for scope 1,2,3                                                                                                                                                         |
-  | =direct_rounding_score_commitments=   | t1b5                                     | =int=     | Rounded score of the commitments for scope 1 & 2                                                                                                                                                    |
-  | =complete_rounding_score_commitments= | t1b5                                     | =int=     | Rounded score of the commitments for scope 1, 2 & 3                                                                                                                                                 |
-  | =direct_score_commitments=            | t1b5                                     | =float=   | Score of the commitments for scope 1 & 2                                                                                                                                                            |
-  | =complete_score_commitments=          | t1b5                                     | =float=   | Score of the commitments for scope 1, 2 & 3                                                                                                                                                         |
-  | =direct_ambition_hexa_color_code=     | t1b5                                     | =str=     | Hexadecimal color code corresponding to the company's direct ambition score                                                                                                                         |
-  | =complete_ambition_hexa_color_code=   | t1b5                                     | =str=     | Hexadecimal color code corresponding to the company's complete ambition score                                                                                                                       |
-  | =total_emissions=                     | t1b6                                     | =int=     | Company's total emissions                                                                                                                                                                           |
-  | =total_emissions_year=                | t1b6                                     | =int=     | Year associated to company's total emissions                                                                                                                                                        |
-  | =emissions_category_amount=           | t1b6                                     | =str=     | Percentage of emissions associated with category (comma separated amount for each category, for example 0.05,0.4,0.15,0.1,0.25,0.05)                                                                |
-  | =emissions_category_name=             | t1b6                                     | =str=     | Name of category (comma separated name for each category, for example Sc. 1 & 2 - Own emissions,Sc.3 - Suppliers,Sc.3 - Logistics,Sc.3 - Packaging,Sc.3 - Use of product,Others)                    |
-  | =emissions_category_hover=            | t1b6                                     | =str=     | Hover info to display for category (comma separated hover text for each category, for example Hover text cat 1,Hover text cat2,Hover text cat 3,Hover text cat 4,Hover text cat 5,Hover text cat 6) |
-  | =brand_logo=                          | t1b7                                     | =str=     | Link to company's logo                                                                                                                                                                              |
-  | =country_flag=                        | t1b7                                     | =str=     | Regional indicator symbol for company's country flag                                                                                                                                                |
-  | =top_brands=                          | t1b7                                     | =list=    | List of company's main brands                                                                                                                                                                       |
-  | =revenue=                             | t1b7                                     | =float=   | Company's revenue in billions                                                                                                                                                                       |
-  | =revenue_year=                        | t1b7                                     | =int=     | Year associated to company's revenue                                                                                                                                                                |
-  |---------------------------------------+------------------------------------------+-----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-
+  |---------------------------------------+------------------------------------------------+-----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+  | Variable name                         | Variable is required by                        | Data type | Description                                                                                                                                                                                         |
+  |---------------------------------------+------------------------------------------------+-----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+  | =company_name=                        | t1b1, t1b2, t1b3, t1b4, t1b5, t1b6, t1b7, t2b2 | =str=     | Name of the company                                                                                                                                                                                 |
+  | =c1_1_5_deg_final=                    | t1b2                                           | =float=   | GHG Emissions ratio as calculated to be in line with the 1.5 degrees trajectory                                                                                                                     |
+  | =c1_1_8deg_final=                     | t1b2                                           | =float=   | GHG Emissions ratio as calculated to be in line with the 1.8 degrees trajectory                                                                                                                     |
+  | =c1_2deg_final=                       | t1b2                                           | =float=   | GHG Emissions ratio as calculated to be in line with the 2 degrees trajectory                                                                                                                       |
+  | =C1_final_date=                       | t1b2                                           | =str=     | Final date used to calculate GHG ratio                                                                                                                                                              |
+  | =c1_final_value=                      | t1b2                                           | =float=   | GHG Emissions ratio given by Nota Climat to the company corresponding to its scope 1 & 2, expressed as an index (initial_value=1)                                                                   |
+  | =C1_initial_date=                     | t1b2                                           | =str=     | Initial date used to calculate GHG ratio                                                                                                                                                            |
+  | =c2_1_5deg_final=                     | t1b2                                           | =float=   | Carbon footprint ratio ratio as calculated to be in line with the 1.5 degrees trajectory                                                                                                            |
+  | =c2_1_8deg_final=                     | t1b2                                           | =float=   | Carbon footprint ratio ratio as calculated to be in line with the 1.8 degrees trajectory                                                                                                            |
+  | =c2_2deg_final=                       | t1b2                                           | =float=   | Carbon footprint ratio ratio as calculated to be in line with the 2 degrees trajectory                                                                                                              |
+  | =C2_final_date=                       | t1b2                                           | =str=     | Final date used to calculate Carbon footprint ratio                                                                                                                                                 |
+  | =c2_final_value=                      | t1b2                                           | =float=   | Carbon footprint ratio given by Nota Climat to the company corresponding to its scope 1, 2 and 3, expressed as an index (initial_value=1)                                                           |
+  | =complete_score=                      | t1b2                                           | =str=     | Initial date used to calculate Carbon footprint ratio                                                                                                                                               |
+  | =global_score=                        | t1b2, t1b3, t1b4                               | =int=     | Company's Global score given by Nota Climat                                                                                                                                                         |
+  | =complete_score_short_label=          | t1b2, t1b3, t1b4,                             | =str=     | Short label displayed corresponding to the company's complete score                                                                                                                                 |
+  | =C2_initial_date=                     | t1b2, t1b3, t1b4, t2b2                         | =int=     | Company's complete score (scope 1, 2 & 3) given by Nota Climat                                                                                                                                      |
+  | =complete_score_hexa_color_code=      | t1b2, t1b3, t1b4, t2b2                         | =str=     | Hexadecimal color code corresponding to the company's complete score                                                                                                                                |
+  | =direct_score=                        | t1b2, t1b3, t1b4, t2b2                         | =int=     | Company's direct score (scope 1 & 2) given by Nota Climat                                                                                                                                           |
+  | =direct_score_hexa_color_code=        | t1b2, t1b3, t1b4, t2b2                         | =str=     | Hexadecimal color code corresponding to the company's direct score                                                                                                                                  |
+  | =complete_ambition_hexa_color_code=   | t1b2, t1b5                                     | =str=     | Hexadecimal color code corresponding to the company's complete ambition score                                                                                                                       |
+  | =complete_rounding_score_commitments= | t1b2, t1b5                                     | =int=     | Rounded score of the commitments for scope 1, 2 & 3                                                                                                                                                 |
+  | =direct_ambition_hexa_color_code=     | t1b2, t1b5                                     | =str=     | Hexadecimal color code corresponding to the company's direct ambition score                                                                                                                         |
+  | =direct_rounding_score_commitments=   | t1b2, t1b5                                     | =int=     | Rounded score of the commitments for scope 1 & 2                                                                                                                                                    |
+  | =direct_score_commitments=            | t1b2, t1b5                                     | =float=   | Score of the commitments for scope 1 & 2                                                                                                                                                            |
+  | =complete_score_commitments=          | t1b2, t1b5                                     | =float=   | Score of the commitments for scope 1, 2 & 3                                                                                                                                                         |
+  | =comment=                             | t1b3                                           | =str=     | Comment provided by Nota Climat (company's commitment vs its GHG emission evolution)                                                                                                                |
+  | =global_score_hexa_color_code=        | t1b3                                           | =str=     | Hexadecimal color code corresponding to the company's global score                                                                                                                                  |
+  | =global_score_short_label=            | t1b3                                           | =str=     | Short label displayed corresponding to the company's global score                                                                                                                                   |
+  | =direct_score_short_label=            | t1b3, t1b4                                     | =str=     | Short label displayed corresponding to the company's direct score                                                                                                                                   |
+  | =global_score_logo_path=              | t1b3, t1b4                                     | =str=     | Path of the company's global score logo                                                                                                                                                             |
+  | =sector=                              | t1b4, t1b7                                     | =str=     | Company's sector                                                                                                                                                                                    |
+  | =complete_ambition_long_label=        | t1b5                                           | =str=     | Ambition of the commitments for scope 1,2,3                                                                                                                                                         |
+  | =complete_commitments_sentence=       | t1b5                                           | =str=     | Description of the commitments for score 1, 2 & 3                                                                                                                                                   |
+  | =direct_ambition_long_label=          | t1b5                                           | =str=     | Ambition of the commitments for scope 1 & 2                                                                                                                                                         |
+  | =direct_commitments_sentence=         | t1b5                                           | =str=     | Description of the commitments for scope 1 & 2                                                                                                                                                      |
+  | =emissions_category_amount=           | t1b6                                           | =str=     | Percentage of emissions associated with category (comma separated amount for each category, for example 0.05,0.4,0.15,0.1,0.25,0.05)                                                                |
+  | =emissions_category_hover=            | t1b6                                           | =str=     | Hover info to display for category (comma separated hover text for each category, for example Hover text cat 1,Hover text cat2,Hover text cat 3,Hover text cat 4,Hover text cat 5,Hover text cat 6) |
+  | =emissions_category_name=             | t1b6                                           | =str=     | Name of category (comma separated name for each category, for example Sc. 1 & 2 - Own emissions,Sc.3 - Suppliers,Sc.3 - Logistics,Sc.3 - Packaging,Sc.3 - Use of product,Others)                    |
+  | =total_emissions=                     | t1b6                                           | =int=     | Company's total emissions                                                                                                                                                                           |
+  | =total_emissions_year=                | t1b6                                           | =int=     | Year associated to company's total emissions                                                                                                                                                        |
+  | =brand_logo=                          | t1b7                                           | =str=     | Link to company's logo                                                                                                                                                                              |
+  | =company_id=                          | t1b7                                           | =str=     | Id of the company                                                                                                                                                                                   |
+  | =country_flag=                        | t1b7                                           | =str=     | Regional indicator symbol for company's country flag                                                                                                                                                |
+  | =revenue=                             | t1b7                                           | =float=   | Company's revenue in billions                                                                                                                                                                       |
+  | =revenue_year=                        | t1b7                                           | =int=     | Year associated to company's revenue                                                                                                                                                                |
+  | =top_brands=                          | t1b7                                           | =list=    | List of company's main brands                                                                                                                                                                       |
+  | =c1_direct_level=                     | t2b2                                           | =float=   | Direct score given by Nota Climat to the company corresponding to its scope 1 & 2                                                                                                                   |
+  | =c2_complete_level=                   | t2b2                                           | =float=   | Complete score given by Nota Climat to the company corresponding to its scope 1, 2 & 3                                                                                                              |
+  |---------------------------------------+------------------------------------------------+-----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 * How to run the dashboard
   1. Clone the repo
      
@@ -73,21 +80,25 @@
      
      =$ cd dashboard && pipenv install=
   3. Start Dash app
-     From =dashboard= folder do =$ python app.py=
+     
+     From =dashboard= folder do =$ pipenv run python app.py=
 * Architecture of the application
   #+begin_src sh 
-    .
-    ├── app.py                # Entry point  
-    ├── assets                # Folder where all the assets (CSS, pictures, etc.) are located
-    │   └── favicon.ico       # Tab icon
-    ├── callbacks.py          # File where the callbacks are defined
-    ├── components            # Folder where complex the functions are stored
-    │   └── navbar.py         # Navigation component
-    ├── data                  # Folder where data are stored
-    ├── layouts               # Folder where the HTML layouts are located
-    │   ├── tab1_layout.py    # Layout of "entreprise" tab 
-    │   └── tab2_layout.py    # Layout of "comparaison" tab
-    └── utils.py              # Various functions 
+    .  
+    ├── assets                   # Folder where all the assets (CSS, pictures, etc.) are located
+    │   └── Pics                 # Contains all the pics shown in the dashboard except t1b4's
+    │   └── frames/climate_score # Contains t1b4 pics    
+    │   └── favicon.ico          # Tab icon
+    ├── components               # Folder where the complex functions are stored
+    │   └── navbar.py            # Navigation component
+    ├── data                     # Folder where the data are stored
+    ├── layouts                  # Folder where the HTML layouts are located
+    │   ├── pages                # Folder where blocks layouts are located (one .py per block)     
+    │   ├── tab1_layout.py       # Layout of "entreprise" tab 
+    │   └── tab2_layout.py       # Layout of "comparaison" tab
+    ├── app.py                   # Entry point
+    └── utils.py                 # Various simple functions
+
   #+end_src
 * Git/Github workflow
 ** Git architecture
@@ -113,8 +124,8 @@
    |--------------+----------|
 
 * Heroku demo of our dashboard
-  [[https://notaclimat.herokuapp.com/][Click here]]
-* Exemple of a Dash dashboard :
+[[https://notaclimat.herokuapp.com/][Click here]] to launch a demo of our dashboard
+* COMMENT Exemple of a Dash dashboard :
   - [[https://dashapptrafic.herokuapp.com/acceuil][Heroku demo]]
   - [[https://github.com/berba1995/Dashboard_avec_Dash_plotly_Python][Github repo]]
   - [[https://ledatascientist.com/creer-un-tableau-de-bord-dynamique-avec-dash/][Tutorial]]
