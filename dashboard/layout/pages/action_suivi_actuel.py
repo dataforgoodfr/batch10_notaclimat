@@ -62,7 +62,7 @@ def build_bullet_gauge(engagement, accomplishment, color_accomplishment):
                         name='Accomplishment',
                         xaxis='x1',
                         yaxis='y1',
-                        hovertemplate='Accomplishment',
+                        hovertemplate='Accomplissement',
                         showlegend=False)
 
     # Building right cursor: engagement
@@ -183,6 +183,7 @@ def generate_bottomleft_item(selected_company):
     fig.update_traces(texttemplate='%{text:.1%}', textposition='inside')
     fig.update_layout(showlegend=False, paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)')
     fig.update_yaxes(title="Réduction dees émissions de GES", tickformat=".0%")
+    fig.update_xaxes(tickangle = 90, automargin=True)
 
     return html.Div([
         dbc.Row([
@@ -191,19 +192,21 @@ def generate_bottomleft_item(selected_company):
                         'width': '60%',
                         'min-width': '60%',
                         'max-width': '60%',
-                        'height': '100%'
+                        #'height': '100%'
                     }),
             dbc.Col(dcc.Graph(figure=build_bullet_gauge(engagement, accomplishment, color_accomplishment)),
                     style={
                         'width': '40%',
                         'min-width': '40%',
                         'max-width': '40%',
-                        'height': '100%'
+                        #'height': '100%'
                     },
-                    className="p-0")
+                    className="p-0"
+                    )
         ])
     ],
-                    className="d-flex flex-column border")
+                    className="d-flex flex-column border"
+                    )
 
 
 def bottom_right(selected_company):
@@ -233,23 +236,24 @@ def generate_bottomright_item(selected_company):
     fig = go.Figure([go.Bar(x=scenarios, y=values, text=values, marker_color=colors)])
     fig.update_traces(texttemplate='%{text:.1%}', textposition='inside')
     fig.update_layout(showlegend=False, paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)')
-    fig.update_yaxes(title="Réduction de l'empreinte carbone", tickformat=".0%")
+    fig.update_yaxes(title="Réduction de l'empreinte carbone", tickformat=".0%",)
+    fig.update_xaxes(tickangle = 90, automargin=True)
 
     return html.Div([
         dbc.Row([
             dbc.Col(dcc.Graph(figure=fig),
                     style={
                         'width': '60%',
-                        'min-width': '60%',
-                        'max-width': '60%',
-                        'height': '100%'
+                        #'min-width': '60%',
+                        #'max-width': '60%',
+                        #'height': '100%'
                     }),
             dbc.Col(dcc.Graph(figure=build_bullet_gauge(engagement, accomplishment, color_accomplishment)),
                     style={
                         'width': '40%',
-                        'min-width': '40%',
-                        'max-width': '40%',
-                        'height': '100%'
+                        #'min-width': '40%',
+                        #'max-width': '40%',
+                        #'height': '100%'
                     },
                     className="p-0")
         ])
@@ -275,5 +279,5 @@ def action_suivi_actuel(selected_company):
                 dbc.Col(generate_bottomright_item(selected_company), className='d-inline p-2', style={'width': '49%'}),
             ],
                     style={'vertical-align': 'middle'}))
-    ])
-    #,                         className="d-flex flex-column")
+    ]
+    ,                         className="d-flex flex-column")
