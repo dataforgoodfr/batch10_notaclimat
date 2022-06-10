@@ -23,7 +23,7 @@ df_t1b6 = df_t1b6.rename({'Group':'company_name'}, axis=1)
 
 
 ## Change amount type (from percentage to float - for example 0.1)
-df_t1b6.loc[:, [col for col in df_t1b6.columns if 'amount' in col]] = df_t1b6.loc[:, [col for col in df_t1b6.columns if 'amount' in col]].apply(lambda x: x.str[:-1].astype(int)/100).astype(float)
+df_t1b6.loc[:, [col for col in df_t1b6.columns if 'amount' in col]] = df_t1b6.loc[:, [col for col in df_t1b6.columns if 'amount' in col]].apply(lambda x: x.str[:-1].astype(int)).astype(int)
 
 ## Concatenate amount, name and hover values in a single column
 cols = ['emissions_category1_amount', 'emissions_category2_amount', 'emissions_category3_amount', 'emissions_category4_amount', 'emissions_category5_amount', 'emissions_category6_amount']
