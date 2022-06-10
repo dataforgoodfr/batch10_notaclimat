@@ -20,6 +20,7 @@ def get_sector(df, selected_company):
 
 def get_filtered_data(df, selected_company):
     df_filtered = df[df['sector'] == get_sector(df, selected_company)].reset_index(drop=True)
+    df_filtered = df_filtered.sort_values(by='global_score', ascending=False)
     return df_filtered
 
 
