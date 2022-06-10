@@ -176,7 +176,7 @@ def bottom_left(selected_company):
 
 
 def generate_bottomleft_item(selected_company):
-    scenarios = [selected_company, '1.5°C scenario', '1.8°C scenario', '2°C scenario']
+    scenarios = [selected_company, '2°C scenario', '1.8°C scenario', '1.5°C scenario']
     values, colors, engagement, accomplishment, color_accomplishment = bottom_left(selected_company)
 
     fig = go.Figure([go.Bar(x=scenarios, y=values, text=values, marker_color=colors)])
@@ -227,7 +227,7 @@ def bottom_right(selected_company):
 
 
 def generate_bottomright_item(selected_company):
-    scenarios = [selected_company, '1.5°C scenario', '1.8°C scenario', '2°C scenario']
+    scenarios = [selected_company, '2°C scenario', '1.8°C scenario', '1.5°C scenario']
     values, colors, engagement, accomplishment, color_accomplishment = bottom_right(selected_company)
 
     fig = go.Figure([go.Bar(x=scenarios, y=values, text=values, marker_color=colors)])
