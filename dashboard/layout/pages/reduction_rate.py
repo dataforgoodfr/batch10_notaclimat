@@ -32,7 +32,8 @@ def build_lollipop_chart(accomplishment, color_accomplishment, companies_names, 
 
     #Set axes ranges
     fig.update_xaxes(ticks="outside", 
-                     tickangle = 45, 
+                     tickangle = 45,
+                     tickfont_size=15, 
                      )
     fig.update_yaxes(layer="below traces",
                          tickmode='array',
