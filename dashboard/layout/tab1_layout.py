@@ -1,3 +1,4 @@
+
 from dash import html
 
 from layout.pages.engagements import engagements
@@ -10,8 +11,8 @@ from layout.pages.sector_compare import sector_compare
 # layout
 def tab1_layout(selected_company):
     if selected_company is None:
-        return html.Div(
-            children=[html.Div(["Sélectionnez une société pour continuer"], className="h2 w-100 p-3 text-center")])
+        #return html.Div(children=[html.Div(["Please select a company to continue"])]) #English version
+        return html.Div(children=[html.Div(["Sélectionnez une société pour continuer"])]) #French version
     elif type(selected_company) is list:
         selected_company = selected_company[0]
 
@@ -24,6 +25,6 @@ def tab1_layout(selected_company):
                  className="col-3 d-flex flex-column gap-2 overflow-auto"),
         html.Div(children=[action_suivi(selected_company),
                            sector_compare(selected_company)],
-                 className="col d-flex flex-column gap-2 overflow-auto")
+                 className="col d-flex flex-column gap-2")
     ],
                     className="container-fluid row py-3 gap-3 m-0 h-100 flex-nowrap")
