@@ -60,7 +60,7 @@ list_scores = ['1','2','3','4','5','6','99']
 # Extract origin table
 
 df = pd.read_excel("../data/BDD Surcouche pour dataviz_v03.xlsx")
-df = df.drop([0])
+#df = df.drop([0])
 
 # Pre-treatment
 
