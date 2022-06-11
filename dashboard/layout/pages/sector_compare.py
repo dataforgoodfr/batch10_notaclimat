@@ -34,10 +34,10 @@ def generate_html_table(df, max_rows, selected_company):
                 html.Td(html.Img(src=image_filename), className="me-1"),
                 html.Td('\u279c ' + df.iloc[i]['direct_score_short_label'],
                         className="px-2",
-                        style={'color': df['direct_score_hexa_color_code'][i]}),
+                        style={'color': df.iloc[i]['direct_score_hexa_color_code']}),
                 html.Td('\u279c ' + df.iloc[i]['complete_score_short_label'],
                         className="px-2",
-                        style={'color': df['complete_score_hexa_color_code'][i]})
+                        style={'color': df.iloc[i]['complete_score_hexa_color_code']})
             ],
                     id=str(i),
                     className="align-baseline"))
