@@ -182,7 +182,7 @@ def generate_bottomleft_item(selected_company):
     fig = go.Figure([go.Bar(x=scenarios, y=values, text=values, marker_color=colors)])
     fig.update_traces(texttemplate='%{text:.1%}', textposition='inside')
     fig.update_layout(showlegend=False, paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)')
-    fig.update_yaxes(title="Réduction dees émissions de GES", tickformat=".0%")
+    fig.update_yaxes(title="Réduction des émissions de GES", tickformat=".0%")
     fig.update_xaxes(tickangle = 90, automargin=True)
 
     return html.Div([
