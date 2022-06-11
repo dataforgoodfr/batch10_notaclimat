@@ -171,18 +171,27 @@ def bottom_left(selected_company):
     accomplishment = get_data(df, 'direct_score')
     color_accomplishment = get_data(df, 'direct_score_hexa_color_code')
     colors = [color_accomplishment, '#FEC800', '#8CDF41', '#0DB800']
+    accomplishment_initial_year = get_data(df, 'c1_initial_date')
+    accomplishment_final_year = get_data(df, 'c1_final_date')
 
-    return values, colors, engagement, accomplishment, color_accomplishment
+    return values, colors, engagement, accomplishment, color_accomplishment, accomplishment_initial_year, accomplishment_final_year
 
+def get_bottomleft_title(accomplishment_initial_year, accomplishment_final_year):
+    if accomplishment_initial_year == 0 and accomplishment_final_year == 0:
+        return "Réduction des émissions de GES"
+    else:
+        initial_year = str(accomplishment_initial_year)
+        final_year = str(accomplishment_final_year)
+        return "Réduction des émissions de GES entre " + initial_year + " et " + final_year
 
 def generate_bottomleft_item(selected_company):
     scenarios = [selected_company, '2°C scenario', '1.8°C scenario', '1.5°C scenario']
-    values, colors, engagement, accomplishment, color_accomplishment = bottom_left(selected_company)
+    values, colors, engagement, accomplishment, color_accomplishment, accomplishment_initial_year, accomplishment_final_year = bottom_left(selected_company)
 
     fig = go.Figure([go.Bar(x=scenarios, y=values, text=values, marker_color=colors)])
     fig.update_traces(texttemplate='%{text:.1%}', textposition='inside')
     fig.update_layout(showlegend=False, paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)')
-    fig.update_yaxes(title="Réduction des émissions de GES", tickformat=".0%")
+    fig.update_yaxes(title=get_bottomleft_title(accomplishment_initial_year, accomplishment_final_year), tickformat=".0%")
     fig.update_xaxes(tickangle = 90, automargin=True)
 
     return html.Div([
@@ -225,18 +234,27 @@ def bottom_right(selected_company):
     accomplishment = get_data(df, 'complete_score')
     color_accomplishment = get_data(df, 'complete_score_hexa_color_code')
     colors = [color_accomplishment, '#FEC800', '#8CDF41', '#0DB800']
+    accomplishment_initial_year = get_data(df, 'c2_initial_date')
+    accomplishment_final_year = get_data(df, 'c2_final_date')
 
-    return values, colors, engagement, accomplishment, color_accomplishment
+    return values, colors, engagement, accomplishment, color_accomplishment, accomplishment_initial_year, accomplishment_final_year
 
+def get_bottomright_title(accomplishment_initial_year, accomplishment_final_year):
+    if accomplishment_initial_year == 0 and accomplishment_final_year == 0:
+        return "Réduction de l'empreinte carbone"
+    else:
+        initial_year = str(accomplishment_initial_year)
+        final_year = str(accomplishment_final_year)
+        return "Réduction de l'empreinte carbone entre " + initial_year + " et " + final_year
 
 def generate_bottomright_item(selected_company):
     scenarios = [selected_company, '2°C scenario', '1.8°C scenario', '1.5°C scenario']
-    values, colors, engagement, accomplishment, color_accomplishment = bottom_right(selected_company)
+    values, colors, engagement, accomplishment, color_accomplishment, accomplishment_initial_year, accomplishment_final_year = bottom_right(selected_company)
 
     fig = go.Figure([go.Bar(x=scenarios, y=values, text=values, marker_color=colors)])
     fig.update_traces(texttemplate='%{text:.1%}', textposition='inside')
     fig.update_layout(showlegend=False, paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)')
-    fig.update_yaxes(title="Réduction de l'empreinte carbone", tickformat=".0%",)
+    fig.update_yaxes(title=get_bottomright_title(accomplishment_initial_year, accomplishment_final_year), tickformat=".0%",)
     fig.update_xaxes(tickangle = 90, automargin=True)
 
     return html.Div([
