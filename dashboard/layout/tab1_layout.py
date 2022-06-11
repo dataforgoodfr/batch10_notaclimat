@@ -21,9 +21,9 @@ def tab1_layout(selected_company):
             engagements(selected_company),
             details(selected_company),
         ],
-                 className="col-3 d-flex flex-column gap-2 overflow-auto"),
+                 className="col-3 d-flex flex-column gap-2"),
         html.Div(children=[action_suivi(selected_company),
                            sector_compare(selected_company)],
-                 className="col d-flex flex-column gap-2 overflow-auto")
+                 className="col d-flex flex-column gap-2")
     ],
-                    className="container-fluid row py-3 gap-3 m-0 h-100 flex-nowrap")
+                    className="container-fluid row py-3 gap-3 m-0 h-100 flex-nowrap overflow-auto")

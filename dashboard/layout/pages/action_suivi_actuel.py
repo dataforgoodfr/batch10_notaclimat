@@ -199,15 +199,15 @@ def generate_bottomleft_item(selected_company):
             dbc.Col(dcc.Graph(figure=fig),
                     style={
                         'width': '60%',
-                        'min-width': '60%',
-                        'max-width': '60%',
+                        'minWidth': '60%',
+                        'maxWidth': '60%',
                         #'height': '100%'
                     }),
             dbc.Col(dcc.Graph(figure=build_bullet_gauge(engagement, accomplishment, color_accomplishment)),
                     style={
                         'width': '40%',
-                        'min-width': '40%',
-                        'max-width': '40%',
+                        'minWidth': '40%',
+                        'maxWidth': '40%',
                         #'height': '100%'
                     },
                     className="p-0"
@@ -289,13 +289,13 @@ def action_suivi_actuel(selected_company):
             ],
                     style={
                         'width': '80%',
-                        'vertical-align': 'middle'
+                        'verticalAlign': 'middle'
                     })),
         html.Div(
             dbc.Row([
                 dbc.Col(generate_bottomleft_item(selected_company), className='d-inline p-2', style={'width': '49%'}),
                 dbc.Col(generate_bottomright_item(selected_company), className='d-inline p-2', style={'width': '49%'}),
             ],
-                    style={'vertical-align': 'middle'}))
+                    style={'verticalAlign': 'middle'}))
     ]
     ,                         className="d-flex flex-column")

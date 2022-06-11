@@ -14,7 +14,7 @@ def tab2_layout(selected_companies):
     return html.Div(children=[
         html.Div(children=[
             reduction_rate(selected_companies),
-        ], className="row gap-2"),
-        html.Div(children=[comments(selected_companies)], className="row gap-2")
+        ], className="row gap-2 w-100"),
+        html.Div(children=[comments(selected_companies)], className="row gap-2 w-100")
     ],
-                    className="container-fluid row pt-3 gap-3 m-0")
+                    className="container-fluid row py-3 gap-3 m-0 h-100 overflow-auto w-100")

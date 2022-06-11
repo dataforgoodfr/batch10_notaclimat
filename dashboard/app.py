@@ -12,7 +12,7 @@ from layout.tab1_layout import tab1_layout
 from layout.tab2_layout import tab2_layout
 
 # Style
-bootstrap_theme = [dbc.themes.BOOTSTRAP, 'https://use.fontawesome.com/releases/v5.9.0/css/all.css']
+bootstrap_theme = [dbc.themes.BOOTSTRAP, 'https://use.fontawesome.com/releases/v5.9.0/css/all.css', 'assets/style.css']
 app = Dash(__name__, external_stylesheets=bootstrap_theme)
 server = app.server
 
@@ -34,7 +34,7 @@ def display_page(pathname):
     if isCurrentTab(pathname, Pages.COMPANY):
         return html.Div(id='tab-1', className="h-100")
     elif isCurrentTab(pathname, Pages.COMPARE):
-        return html.Div(id='tab-2')
+        return html.Div(id='tab-2', className="h-100")
     else:
         return html.Div(["404"])
 

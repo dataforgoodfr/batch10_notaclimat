@@ -1,0 +1,9 @@
+.container-fluid > .col > .card, .container-fluid > .col-3 > .card, .container-fluid > .row > .card {
+  box-shadow: rgba(0, 0, 0, 0.85) 0px 0px 0px 0px, rgb(158, 225, 255) 0px 0px 0px 0px, rgba(0, 21, 41, 0.1) 0px 0px 3px 0px, rgba(0, 21, 41, 0.1) 0px 2px 4px 0px;
+  border-color: transparent;
+  border-radius: 8px !important;
+}
+
+.col {
+  height: fit-content;
+}
