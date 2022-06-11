@@ -1,9 +1,9 @@
-from turtle import back
-import pandas as pd
+# from turtle import back
+# import pandas as pd
 from dash import dcc, html
 from utils import t1b6_df
 import plotly.express as px
-import plotly.graph_objs as go
+# import plotly.graph_objs as go
 
 
 def get_company_details(df, selected_company):
@@ -12,7 +12,7 @@ def get_company_details(df, selected_company):
     df = df[df['company_name'] == selected_company]
 
     # Make lists from amount, name and hover
-    amount = [int(i) for i in df['emissions_category_amount'].iloc[0].split(',')]
+    amount = [float(i) for i in df['emissions_category_amount'].iloc[0].split(',')]
     name = df['emissions_category_name'].iloc[0].split(',')
     hover = df['emissions_category_hover'].iloc[0].split(',')
 
@@ -27,23 +27,28 @@ def details(selected_company):
         y=amount,
         color=name,
         hover_name=hover,
-        labels={'y':'% Emissions'}
+        text_auto='.0%',
+        labels={'y':'Emissions'}
         )
 
     fig.update_layout({
         'plot_bgcolor': 'rgba(255, 255, 255, 255)',
         'paper_bgcolor': 'rgba(255, 255, 255, 255)',
         },
-        legend_title="Catégories"
+        legend_title="Catégories",
+        uniformtext_minsize=6,
         )
 
     fig.data = fig.data[::-1]
     fig.layout.legend.traceorder = 'reversed'
 
-    fig.update_traces(hovertemplate='<b>Information</b>: %{hovertext}' +
-    "<br><b>Emissions</b>: %{y}%<br><extra></extra>")
+    fig.update_traces(textposition='inside',
+    hovertemplate='<b>Information</b>: %{hovertext}'
+    # + "<br><b>Emissions</b>: %{y}%<br><extra></extra>"
+    )
     
     fig.update_xaxes(visible=False, showticklabels=False)
+    fig.update_yaxes(visible=False, showticklabels=False)
 
 
     return html.Div(children=[
