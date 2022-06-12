@@ -28,7 +28,8 @@ def details(selected_company):
         color=name,
         hover_name=hover,
         text_auto='.0%',
-        labels={'y':'Emissions'}
+        labels={'y':'Emissions'},
+        color_discrete_sequence= px.colors.sequential.Plotly3
         )
 
     fig.update_layout({
