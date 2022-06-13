@@ -49,9 +49,9 @@ def generate_html_table(df, max_rows, selected_company):
                 html.Thead([
                     html.Tr([
                         html.Td('Entreprises', className="fw-bold py-3 sticky-top align-middle"),
-                        html.Td('Réduction actuelle', className="fw-bold py-3 sticky-top align-middle"),
-                        html.Td('Réduction de ses propres émissions', className="fw-bold py-3 sticky-top align-middle"),
-                        html.Td('Réduction de son empreinte carbone', className="fw-bold py-3 sticky-top align-middle")
+                        html.Td("Niveau d'action actuel", className="fw-bold py-3 sticky-top align-middle"),
+                        html.Td('Ses propres émissions :\ntrajectoire compatible avec un réchauffement de...', className="fw-bold py-3 sticky-top align-middle"),
+                        html.Td('Son empreinte carbone complète :\ntrajectoire compatible avec un réchauffement de...', className="fw-bold py-3 sticky-top align-middle")
                     ],
                             className="table-primary p-2 sticky-top")
                 ],
