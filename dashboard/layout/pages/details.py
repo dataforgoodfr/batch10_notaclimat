@@ -7,8 +7,7 @@ import plotly.express as px
 
 
 def get_company_details(df, selected_company):
-    global amount, name, hover, x
-
+    
     df = df[df['company_name'] == selected_company]
 
     # Make lists from amount, name and hover
@@ -16,18 +15,19 @@ def get_company_details(df, selected_company):
     name = df['emissions_category_name'].iloc[0].split(',')
     hover = df['emissions_category_hover'].iloc[0].split(',')
 
-    return df
+    return df, amount, name, hover
 
 
 # Generate bar chart
 def details(selected_company):
-    df = get_company_details(t1b6_df, selected_company)
+    df, amount, name, hover = get_company_details(t1b6_df, selected_company)
     fig = px.bar(
+        data_frame = df,
         x=[1, 1, 1, 1, 1, 1],
         y=amount,
         color=name,
         hover_name=hover,
-        text_auto='.0%',
+        text=amount,
         labels={'y':'Emissions'},
         color_discrete_sequence= px.colors.sequential.Plotly3
         )
@@ -44,7 +44,8 @@ def details(selected_company):
     fig.layout.legend.traceorder = 'reversed'
 
     fig.update_traces(textposition='inside',
-    hovertemplate='<b>Information</b>: %{hovertext}'
+                      texttemplate='%{text:.1%}',
+                      hovertemplate='<b>Information</b>: %{hovertext}'
     # + "<br><b>Emissions</b>: %{y}%<br><extra></extra>"
     )
     
