@@ -13,7 +13,7 @@ from layout.tab2_layout import tab2_layout
 
 # Style
 bootstrap_theme = [dbc.themes.BOOTSTRAP, 'https://use.fontawesome.com/releases/v5.9.0/css/all.css', 'assets/style.css']
-app = Dash(__name__, external_stylesheets=bootstrap_theme)
+app = Dash(external_stylesheets=bootstrap_theme, name="Nota Climat", title="Nota Climat")
 server = app.server
 
 # Config

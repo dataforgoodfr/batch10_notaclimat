@@ -30,8 +30,8 @@ def generate_html_table(df, max_rows, selected_company):
         image_filename = df.iloc[i]['global_score_logo_path']
         rows.append(
             html.Tr([
-                html.Td(df.iloc[i]['company_name'], className="fw-bold"),
-                html.Td(html.Img(src=image_filename), className="me-1"),
+                html.Td(df.iloc[i]['company_name'], className="fw-bold text-start"),
+                html.Td(html.Img(src=image_filename), className="text-start"),
                 html.Td('\u279c ' + df.iloc[i]['direct_score_short_label'],
                         className="px-2",
                         style={'color': df.iloc[i]['direct_score_hexa_color_code']}),
