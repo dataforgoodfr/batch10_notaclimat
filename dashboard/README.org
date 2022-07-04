@@ -1,13 +1,10 @@
 * How to run the dashboard
-  1. Clone the repo
-     
-    =$ git clone address_of_the_current_web_page=
-  2. Install required Python packages
+  1. Install required Python packages
      
      =$ pip install --user pipenv=
      
      =$ cd dashboard && pipenv install=
-  3. Start Dash app
+  2. Start Dash app
      
      From =dashboard= folder do =$ pipenv run python app.py=
 
