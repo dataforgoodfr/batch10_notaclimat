@@ -1,3 +1,16 @@
+* How to run the dashboard
+  1. Clone the repo
+     
+    =$ git clone address_of_the_current_web_page=
+  2. Install required Python packages
+     
+     =$ pip install --user pipenv=
+     
+     =$ cd dashboard && pipenv install=
+  3. Start Dash app
+     
+     From =dashboard= folder do =$ pipenv run python app.py=
+
 * COMMENT save to git folder
   C-x C-w
   #/home/crocefisso/Git/batch10_notaclimat/dashboard/README.org
@@ -70,18 +83,7 @@
   | =complete_level=                      | t2b2                                           | =float=   | Complete score given by Nota Climat to the company corresponding to its scope 1, 2 & 3                                                                                                              |
   | =direct_level=                        | t2b2                                           | =float=   | Direct score given by Nota Climat to the company corresponding to its scope 1 & 2                                                                                                                   |
   |---------------------------------------+------------------------------------------------+-----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-* How to run the dashboard
-  1. Clone the repo
-     
-    =$ git clone address_of_the_current_web_page=
-  2. Install required Python packages
-     
-     =$ pip install --user pipenv=
-     
-     =$ cd dashboard && pipenv install=
-  3. Start Dash app
-     
-     From =dashboard= folder do =$ pipenv run python app.py=
+
 * Architecture of the application
   #+begin_src sh 
     .  
