@@ -4,7 +4,7 @@ import ast
 from dash import dcc
 from dash import html
 import dash_bootstrap_components as dbc
-from utils import t1b1_df, isCurrentTab, Pages, component_ids, state_to_url
+from utils import dataviz_df, isCurrentTab, Pages, component_ids, state_to_url
 
 
 def select_company_component(currentTab, state):
@@ -37,7 +37,7 @@ def select_company_component(currentTab, state):
                 options=[{
                     'label': i,
                     'value': i
-                } for i in t1b1_df['company_name']],
+                } for i in dataviz_df['company_name']],
                 #value='Andros'
                 multi=isCurrentTab(currentTab, Pages.COMPARE),
                 searchable=True,
