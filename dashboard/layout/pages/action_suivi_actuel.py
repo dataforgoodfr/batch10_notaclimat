@@ -4,7 +4,7 @@ import dash_bootstrap_components as dbc
 import dash_daq as daq
 
 from utils import card_style
-from utils import t1b2_df
+from utils import dataviz_df
 
 import plotly.graph_objects as go
 import plotly.figure_factory as ff
@@ -100,7 +100,7 @@ def build_bullet_gauge(engagement, accomplishment, color_accomplishment):
 
 
 def top_left(selected_company):
-    df = get_filtered_data(t1b2_df, selected_company)
+    df = get_filtered_data(dataviz_df, selected_company)
     value = get_data(df, 'direct_score_short_label')
     color = get_data(df, 'direct_score_hexa_color_code')
     pic = 'assets/frames/Picto_usine.png'
@@ -128,7 +128,7 @@ def generate_topleft_item(selected_company):
 
 
 def top_right(selected_company):
-    df = get_filtered_data(t1b2_df, selected_company)
+    df = get_filtered_data(dataviz_df, selected_company)
     value = get_data(df, 'complete_score_short_label')
     color = get_data(df, 'complete_score_hexa_color_code')
     pic = 'assets/frames/Picto_lifecycle.png'
@@ -156,7 +156,7 @@ def generate_topright_item(selected_company):
 
 
 def bottom_left(selected_company):
-    df = get_filtered_data(t1b2_df, selected_company)
+    df = get_filtered_data(dataviz_df, selected_company)
     values = []
     col_list = ['c1_final_value', 'c1_2_deg_final', 'c1_1_8_deg_final', 'c1_1_5_deg_final']
 
@@ -219,7 +219,7 @@ def generate_bottomleft_item(selected_company):
 
 
 def bottom_right(selected_company):
-    df = get_filtered_data(t1b2_df, selected_company)
+    df = get_filtered_data(dataviz_df, selected_company)
     values = []
     col_list = ['c2_final_value', 'c2_2_deg_final', 'c2_1_8_deg_final', 'c2_1_5_deg_final']
 
