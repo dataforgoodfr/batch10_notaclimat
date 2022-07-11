@@ -1,0 +1,12 @@
+version: '3.4'
+services:
+
+  ecommerce_value_exporter:
+    image: ghcr.io/data_for_good/nota_climat:latest
+    environment:
+      - GOOGLE_APPLICATION_CREDENTIALS=${GOOGLE_APPLICATION_CREDENTIALS}
+    volumes:
+      - ./keys:/keys
+      - ./configs:/src/stack/configs
+    ports:
+      - "8080:8080"

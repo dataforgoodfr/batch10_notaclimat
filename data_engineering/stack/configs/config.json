@@ -1,0 +1,13 @@
+{
+  "paths": {
+    "gcp_key":"../keys/analytics-service-account-2-40.json"
+  },
+  "spreadsheet": {
+    "raw_data_spreadsheet_id": "1SS6alKNhtkpxtNVSIwkxXHuPT0n6jmNKLtclm5ZB2rU",
+    "processed_data_spreadsheet_id": "1tiYP-XJRa6-ye2FyUhbu39Myen7WGV7DNmkcrGlNxtI",
+    "processed_data_spreadsheet_range": "Table Dash - Vue 1 entreprise"
+  },
+  "data_processing": {
+    "list_groups_wanted": ["Danone","L'Oréal","Ferrero"]
+  }
+}
