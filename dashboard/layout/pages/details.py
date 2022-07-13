@@ -1,9 +1,8 @@
 # from turtle import back
 # import pandas as pd
 from dash import dcc, html
-from utils import t1b6_df
+from utils import dataviz_df
 import plotly.express as px
-# import plotly.graph_objs as go
 
 
 def get_company_details(df, selected_company):
@@ -20,7 +19,7 @@ def get_company_details(df, selected_company):
 
 # Generate bar chart
 def details(selected_company):
-    df, amount, name, hover = get_company_details(t1b6_df, selected_company)
+    df, amount, name, hover = get_company_details(dataviz_df, selected_company)
     fig = px.bar(
         data_frame = df,
         x=[1, 1, 1, 1, 1, 1],

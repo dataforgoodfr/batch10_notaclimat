@@ -45,11 +45,13 @@ def state_to_url(*state):
     return f'?{state}'
 
 
-t1b1_df = pd.read_csv('data/t1b1.csv')
-t1b2_df = pd.read_csv('data/t1b2.csv')
-t1b3_df = pd.read_csv('data/t1b3.csv')
-t1b4_df = pd.read_csv('data/t1b4.csv')
-t1b5_df = pd.read_csv('data/t1b5.csv')
-t1b6_df = pd.read_csv('data/t1b6.csv', sep=';')
-t1b7_df = pd.read_csv('data/t1b1-7.csv')
-t2b2_df = pd.read_csv('data/t2b2.csv')
+# t1b1_df = pd.read_csv('data/t1b1.csv')
+# t1b2_df = pd.read_csv('data/t1b2.csv')
+# t1b3_df = pd.read_csv('data/t1b3.csv')
+# t1b4_df = pd.read_csv('data/t1b4.csv')
+# t1b5_df = pd.read_csv('data/t1b5.csv')
+# t1b6_df = pd.read_csv('data/t1b6.csv', sep=';')
+# t1b7_df = pd.read_csv('data/t1b1-7.csv')
+# t2b2_df = pd.read_csv('data/t2b2.csv')
+
+dataviz_df = pd.read_excel('data/BDD_for_dataviz.xlsx', sheet_name='Sheet1')

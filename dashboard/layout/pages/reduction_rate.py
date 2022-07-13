@@ -2,7 +2,7 @@ from dash import html, dcc
 import dash_bootstrap_components as dbc
 import plotly.graph_objects as go
 
-from utils import t2b2_df, card_style
+from utils import dataviz_df, card_style
 
 
 def get_filtered_data(df, selected_companies):
@@ -62,7 +62,7 @@ def build_lollipop_chart(accomplishment, color_accomplishment, companies_names, 
 
 
 def chart_left(selected_companies):
-    df = get_filtered_data(t2b2_df, selected_companies)
+    df = get_filtered_data(dataviz_df, selected_companies)
     df = df.sort_values(by='direct_level').reset_index(drop=True)
     accomplishment = get_data(df, 'direct_level')
     color_accomplishment = get_data(df, 'direct_score_hexa_color_code')
@@ -72,7 +72,7 @@ def chart_left(selected_companies):
 
 
 def chart_right(selected_companies):
-    df = get_filtered_data(t2b2_df, selected_companies)
+    df = get_filtered_data(dataviz_df, selected_companies)
     df = df.sort_values(by='complete_level').reset_index(drop=True)
     accomplishment = get_data(df, 'complete_level')
     color_accomplishment = get_data(df, 'complete_score_hexa_color_code')

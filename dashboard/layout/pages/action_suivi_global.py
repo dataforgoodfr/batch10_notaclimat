@@ -1,5 +1,5 @@
 from dash import html
-from utils import card_style, t1b3_df
+from utils import card_style, dataviz_df
 
 
 def get_company_global_information(df_companies_global_information, selected_company):
@@ -21,7 +21,7 @@ def get_company_global_information(df_companies_global_information, selected_com
 
 
 def action_suivi_global(selected_company):
-    company_global_information = get_company_global_information(t1b3_df, selected_company)
+    company_global_information = get_company_global_information(dataviz_df, selected_company)
     return html.Div(
         children=[
             html.Div([

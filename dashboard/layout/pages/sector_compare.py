@@ -1,7 +1,7 @@
 from dash import html
-from utils import t1b4_df, card_style
+from utils import dataviz_df, card_style
 
-df_t1b4 = t1b4_df
+df_t1b4 = dataviz_df
 
 printable_columns = [
     'company_name', 'global_score_logo_path', 'direct_score_short_label', 'complete_score_short_label',

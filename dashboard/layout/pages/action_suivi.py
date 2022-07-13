@@ -1,5 +1,5 @@
 from dash import html
-from utils import card_style, t1b3_df
+from utils import card_style, dataviz_df
 
 from layout.pages.action_suivi_global import action_suivi_global
 from layout.pages.action_suivi_actuel import action_suivi_actuel
